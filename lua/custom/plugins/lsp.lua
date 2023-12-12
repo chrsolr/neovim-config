@@ -31,25 +31,32 @@ return {
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
 
-      nmap('<leader>cr', vim.lsp.buf.rename, 'Code Rename')
-      nmap('<leader>.', vim.lsp.buf.code_action, 'Code Actions')
-      nmap('g.', vim.lsp.buf.code_action, 'Code Actions')
-      nmap('gd', vim.lsp.buf.definition, 'Go to Definition')
-      nmap('gr', require('telescope.builtin').lsp_references, 'Go to References')
+      nmap('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
+      nmap('<leader>.rn', vim.lsp.buf.rename, 'Code Rename')
+      nmap('<leader>.df', vim.lsp.buf.definition, 'Go to Definition')
+      nmap('<leader>.rf', require('telescope.builtin').lsp_references, 'Go to References')
+      nmap('<leader>.td', vim.lsp.buf.type_definition, 'Type Definition')
+      nmap('<leader>.ip', vim.lsp.buf.implementation, 'Go to Implementation')
+      nmap('<leader>.dc', vim.lsp.buf.declaration, 'Go to Declaration')
+
+
+
+      -- [[ Remapped ]]
+      -- nmap('gd', vim.lsp.buf.definition, 'Go to Definition')
+      -- nmap('gr', require('telescope.builtin').lsp_references, 'Go to References')
       -- nmap('gI', vim.lsp.buf.implementation, 'Goto Implementation')
+      -- nmap('gD', vim.lsp.buf.declaration, 'Goto Declaration')
       -- nmap('<leader>D', vim.lsp.buf.type_definition, 'Type Definition')
+      --
+      -- [[ LSP Unmapped ]]
       -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
       -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
-      --
-      -- [[ Lesser used LSP functionality ]]
-      -- nmap('gD', vim.lsp.buf.declaration, 'Goto Declaration')
       -- nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Workspace Add Folder')
       -- nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Workspace Remove Folder')
       -- nmap('<leader>wl', function()
       -- 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       -- end, 'Workspace List Folders')
 
-      --
       -- [[ Create a :Format Command ]]
       --
       vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -82,7 +89,8 @@ return {
 
     local mason_lspconfig = require 'mason-lspconfig'
 
-    -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+    -- nvim-cmp supports additional completion capabilities,
+    -- so broadcast that to servers
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
