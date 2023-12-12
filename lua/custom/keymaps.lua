@@ -8,6 +8,9 @@ vim.keymap.set('v', 'p', '"_dP', { noremap = true })
 -- [[ Code ]]
 --
 vim.keymap.set({ 'n', 'v' }, '<leader>fm', '<cmd> Format <CR>', { noremap = true })
+vim.keymap.set('n', '<leader>.k', vim.lsp.buf.hover, { noremap = true, desc = 'LSP: Hover' })
+vim.keymap.set('n', '<leader>.sh', vim.lsp.buf.signature_help, { noremap = true, desc = 'LSP: Signature Help' })
+vim.keymap.set('n', '<leader>.e', vim.diagnostic.open_float, { desc = 'LSP: Floating Diagnostic' })
 
 -- [[ Terminal Commands ]]
 --
@@ -79,6 +82,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- [[ Unmapped ]]
 -- -- [[ Copilot ]]
 -- vim.keymap.set('i', '<C-a>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
 -- vim.keymap.set('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
@@ -103,7 +107,6 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 --
 --
 -- -- Actions & Misc
--- vim.keymap.set('n', '<leader>K', vim.lsp.buf.hover, { noremap = true, desc = 'LSP: Hover' })
 -- vim.keymap.set('n', '<leader>ch', vim.lsp.buf.signature_help, { noremap = true, desc = 'LSP: Signature Help' })
 -- vim.keymap.set({ 'n', 'v' }, '<leader>cf', '<cmd> EslintFixAll <CR>', { noremap = true })
 --
@@ -124,5 +127,4 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- -- Diagnostic keymaps
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
--- vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 -- vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
