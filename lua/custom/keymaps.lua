@@ -11,6 +11,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>fm', '<cmd> Format <CR>', { noremap = true
 vim.keymap.set('n', '<leader>.k', vim.lsp.buf.hover, { noremap = true, desc = 'LSP: Hover' })
 vim.keymap.set('n', '<leader>.sh', vim.lsp.buf.signature_help, { noremap = true, desc = 'LSP: Signature Help' })
 vim.keymap.set('n', '<leader>.e', vim.diagnostic.open_float, { desc = 'LSP: Floating Diagnostic' })
+vim.keymap.set('n', '<leader>.dl', vim.diagnostic.setloclist, { desc = 'LSP: Open diagnostics list' })
 
 -- [[ Terminal Commands ]]
 --
