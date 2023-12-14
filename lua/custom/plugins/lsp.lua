@@ -34,12 +34,11 @@ return {
       nmap('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
       nmap('<leader>.rn', vim.lsp.buf.rename, 'Code Rename')
       nmap('<leader>.df', vim.lsp.buf.definition, 'Go to Definition')
+      nmap('gd', vim.lsp.buf.definition, 'Go to Definition')
       nmap('<leader>.rf', require('telescope.builtin').lsp_references, 'Go to References')
       nmap('<leader>.td', vim.lsp.buf.type_definition, 'Type Definition')
       nmap('<leader>.ip', vim.lsp.buf.implementation, 'Go to Implementation')
       nmap('<leader>.dc', vim.lsp.buf.declaration, 'Go to Declaration')
-
-
 
       -- [[ Remapped ]]
       -- nmap('gd', vim.lsp.buf.definition, 'Go to Definition')
