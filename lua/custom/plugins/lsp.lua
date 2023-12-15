@@ -32,7 +32,7 @@ return {
       end
 
       nmap('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
-      nmap('<leader>.rn', vim.lsp.buf.rename, 'Code Rename')
+      nmap('<leader>.rr', vim.lsp.buf.rename, 'Code Rename')
       nmap('<leader>.df', vim.lsp.buf.definition, 'Go to Definition')
       nmap('gd', vim.lsp.buf.definition, 'Go to Definition')
       nmap('<leader>.rf', require('telescope.builtin').lsp_references, 'Go to References')
