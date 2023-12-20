@@ -8,15 +8,19 @@ rm -rf ~/.local/share/nvim/
 rm -rf ~/.local/state/nvim
 ```
 
-### Install Neovim Config
+### Instructions
 
-#### Config (Mac & Linux)
+**Config (Mac & Linux)**
 
-Run: `git clone git@github.com:chrsolr/neovim-config.git ~/.config/nvim`
+```bash
+git clone git@github.com:chrsolr/neovim-config.git ~/.config/nvim
+```
 
-#### Config (Windows)
+**Config (Windows)**
 
-Run: `git clone git@github.com:chrsolr/neovim-config.git %userprofile%\AppData\Local\nvim\`
+```bash
+git clone git@github.com:chrsolr/neovim-config.git %userprofile%\AppData\Local\nvim\
+```
 
 ### Cheatsheet
 
