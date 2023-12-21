@@ -40,13 +40,6 @@ return {
       nmap('<leader>.ip', vim.lsp.buf.implementation, 'Go to Implementation')
       nmap('<leader>.dc', vim.lsp.buf.declaration, 'Go to Declaration')
 
-      -- [[ Remapped ]]
-      -- nmap('gd', vim.lsp.buf.definition, 'Go to Definition')
-      -- nmap('gr', require('telescope.builtin').lsp_references, 'Go to References')
-      -- nmap('gI', vim.lsp.buf.implementation, 'Goto Implementation')
-      -- nmap('gD', vim.lsp.buf.declaration, 'Goto Declaration')
-      -- nmap('<leader>D', vim.lsp.buf.type_definition, 'Type Definition')
-      --
       -- [[ LSP Unmapped ]]
       -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
       -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
