@@ -28,4 +28,20 @@ local solarized_osaka = {
   end,
 }
 
-return tokyonight
+-- [[ catppuccin ]]
+--
+local catppuccin = {
+  'catppuccin/nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require('catppuccin').setup {
+      -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+      -- latte, frappe, macchiato, mocha
+      flavour = 'mocha',
+    }
+    vim.cmd.colorscheme 'catppuccin'
+  end,
+}
+
+return catppuccin
