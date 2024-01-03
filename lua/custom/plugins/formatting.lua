@@ -1,32 +1,33 @@
 return {
-  "stevearc/conform.nvim",
+  'stevearc/conform.nvim',
   event = {
-    "BufReadPre",
-    "BufNewFile"
+    'BufReadPre',
+    'BufNewFile',
   },
   config = function()
-    local conform = require("conform")
+    local conform = require 'conform'
 
-    conform.setup({
+    conform.setup {
       formatters_by_ft = {
-        javascript = { "prettierd" },
-        typescript = { "prettierd" },
-        javascriptreact = { "prettierd" },
-        typescriptreact = { "prettierd" },
-        css = { "prettierd" },
-        tailwindcss = { "prettierd" },
-        html = { "prettierd" },
-        json = { "prettierd" },
-        yaml = { "prettierd" },
-        markdown = { "prettierd" },
-        lua = { "stylua" },
-        csharp = { "csharpier" },
+        javascript = { 'prettierd' },
+        typescript = { 'prettierd' },
+        javascriptreact = { 'prettierd' },
+        typescriptreact = { 'prettierd' },
+        css = { 'prettierd' },
+        tailwindcss = { 'prettierd' },
+        html = { 'prettierd' },
+        json = { 'prettierd' },
+        yaml = { 'prettierd' },
+        markdown = { 'prettierd' },
+        lua = { 'stylua' },
+        csharp = { 'csharpier' },
+        toml = { 'taplo' },
       },
       format_on_save = {
         lsp_fallback = true,
         async = false,
-        timeout_ms = 500
-      }
-    })
-  end
+        timeout_ms = 500,
+      },
+    }
+  end,
 }
