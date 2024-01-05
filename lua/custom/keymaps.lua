@@ -15,6 +15,7 @@ vim.keymap.set('n', '<leader>.e', vim.diagnostic.open_float, { desc = 'LSP: Floa
 vim.keymap.set('n', '<leader>.dl', vim.diagnostic.setloclist, { desc = 'LSP: Open diagnostics list' })
 vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { noremap = true, desc = 'LSP: Hover' })
 vim.keymap.set('n', 'ge', vim.diagnostic.open_float, { desc = 'LSP: Floating Diagnostic' })
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, desc = 'LSP: Hover' })
 
 -- [[ Terminal Commands ]]
 --
