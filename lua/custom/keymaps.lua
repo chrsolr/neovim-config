@@ -76,10 +76,10 @@ vim.keymap.set('n', '<C-Down>', '<cmd> horizontal resize +5 <CR>', { noremap = t
 
 -- [[ Panes ]]
 --
-vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, desc = 'Move to left pane' })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, desc = 'Move to below pane' })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, desc = 'Move to top pane' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, desc = 'Move to right pane' })
+-- vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, desc = 'Move to left pane' })
+-- vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, desc = 'Move to below pane' })
+-- vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, desc = 'Move to top pane' })
+-- vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, desc = 'Move to right pane' })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, desc = 'Close pane' })
 
 -- [[ Misc ]]
