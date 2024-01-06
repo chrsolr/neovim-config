@@ -82,6 +82,11 @@ vim.keymap.set('n', '<C-Down>', '<cmd> horizontal resize +5 <CR>', { noremap = t
 -- vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, desc = 'Move to right pane' })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, desc = 'Close pane' })
 
+-- [[ Copilot ]]
+vim.keymap.set('i', '<C-a>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
+-- vim.keymap.set('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
+-- vim.keymap.set('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
+
 -- [[ Misc ]]
 --
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -89,14 +94,6 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- [[ Unmapped ]]
--- -- [[ Copilot ]]
--- vim.keymap.set('i', '<C-a>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
--- vim.keymap.set('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
--- vim.keymap.set('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
---
---
---
---
 -- -- Spell Check
 -- vim.keymap.set('n', '<leader>-z=', 'z=', { noremap = true, desc = 'Spell: Show Suggestions' })
 -- vim.keymap.set('n', '<leader>-za', 'zg', { noremap = true, desc = 'Spell: Add to Dictionary' })

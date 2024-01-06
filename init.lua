@@ -43,6 +43,7 @@ require('lazy').setup({
 --
 require 'custom.options'
 require 'custom.keymaps'
+require 'custom.snippets'
 
 -- [[ Setup neovim lua configuration ]]
 --
