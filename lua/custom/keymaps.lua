@@ -82,7 +82,13 @@ vim.keymap.set('n', '<C-Down>', '<cmd> horizontal resize +5 <CR>', { noremap = t
 -- vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, desc = 'Move to right pane' })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, desc = 'Close pane' })
 
+-- [[ Trouble ]]
+--
+vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, desc = 'Toggle trouble' })
+
+
 -- [[ Copilot ]]
+--
 vim.keymap.set('i', '<C-a>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
 -- vim.keymap.set('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
 -- vim.keymap.set('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
