@@ -86,7 +86,6 @@ vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, desc = 'Close pane' })
 --
 vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, desc = 'Toggle trouble' })
 
-
 -- [[ Copilot ]]
 --
 vim.keymap.set('i', '<C-a>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })

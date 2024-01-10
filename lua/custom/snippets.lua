@@ -9,12 +9,6 @@ local text_node = luasnip.text_node
 local insert_node = luasnip.insert_node
 local function_node = luasnip.function_node
 
-vim.keymap.set({ 'i', 's' }, '<C-m>', function()
-  if luasnip.expand_or_jumpable() then
-    luasnip.expand_or_jump()
-  end
-end, { silent = true })
-
 -- [[ all ]]
 --
 local uuid = snippet('uuid', {
