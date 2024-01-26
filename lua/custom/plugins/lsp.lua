@@ -52,15 +52,14 @@ return {
       -- [[ Create a :Format Command ]]
       --
       vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-        local conform = require 'conform'
-        conform.format {
-          lsp_fallback = true,
-          async = true,
-          timeout_ms = 500,
-        }
-
-        -- vim.lsp.buf.format()
-      end, { desc = 'Format current buffer with Conform or LSP' })
+        -- local conform = require 'conform'
+        -- conform.format {
+        --   lsp_fallback = true,
+        --   async = true,
+        --   timeout_ms = 500,
+        -- }
+        vim.lsp.buf.format()
+      end, { desc = 'Format current buffer with vim.lsp.buf.format()' })
     end
 
     local servers = {
@@ -71,6 +70,9 @@ return {
       tailwindcss = {},
       emmet_language_server = {},
       csharp_ls = {},
+      dockerls = {
+        autostart = false,
+      },
       lua_ls = {
         Lua = {
           workspace = { checkThirdParty = false },

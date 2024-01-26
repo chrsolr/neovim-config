@@ -8,7 +8,7 @@ vim.keymap.set('i', 'jk', '<ESC>', { noremap = true })
 
 -- [[ Code ]]
 --
-vim.keymap.set({ 'n', 'v' }, '<leader>fm', '<cmd> Format <CR>', { noremap = true })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>fm', '<cmd> Format <CR>', { noremap = true })
 vim.keymap.set('n', '<leader>.k', vim.lsp.buf.hover, { noremap = true, desc = 'LSP: Hover' })
 vim.keymap.set('n', '<leader>.sh', vim.lsp.buf.signature_help, { noremap = true, desc = 'LSP: Signature Help' })
 vim.keymap.set('n', '<leader>.e', vim.diagnostic.open_float, { desc = 'LSP: Floating Diagnostic' })
@@ -16,6 +16,14 @@ vim.keymap.set('n', '<leader>.dl', vim.diagnostic.setloclist, { desc = 'LSP: Ope
 vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { noremap = true, desc = 'LSP: Hover' })
 vim.keymap.set('n', 'ge', vim.diagnostic.open_float, { desc = 'LSP: Floating Diagnostic' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, desc = 'LSP: Hover' })
+vim.keymap.set({ 'n', 'v' }, '<leader>fm', function(_)
+  local conform = require 'conform'
+  conform.format {
+    lsp_fallback = true,
+    async = true,
+    timeout_ms = 500,
+  }
+end, { desc = 'Format current buffer with Conform or LSP' })
 
 -- [[ Terminal Commands ]]
 --
