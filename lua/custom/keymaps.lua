@@ -4,6 +4,7 @@ pcall(require('telescope').load_extension, 'fzf')
 -- [[ Basic Keymaps ]]
 -- See `:help vim.keymap.set()`
 vim.keymap.set('v', 'p', '"_dP', { noremap = true })
+vim.keymap.set('v', '$', 'g_', { noremap = true })
 vim.keymap.set('i', 'jk', '<ESC>', { noremap = true })
 
 -- [[ Code ]]
