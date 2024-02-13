@@ -24,6 +24,13 @@ local solarized_osaka = {
   config = function()
     require('solarized-osaka').setup {
       style = 'day',
+
+      -- Change the "hint" color to the "orange" color, and make the "error" color bright red
+      on_colors = function(colors)
+        -- colors.hint = colors.orange
+        -- colors.error = '#ff0000'
+      end,
+
       on_highlights = function(hl, c)
         hl.TelescopeNormal = {
           bg = c.bg_dark,
