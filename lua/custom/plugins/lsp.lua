@@ -64,7 +64,6 @@ return {
       html = {},
       cssls = {},
       tsserver = {},
-      eslint = {},
       tailwindcss = {},
       emmet_language_server = {},
       csharp_ls = {},
