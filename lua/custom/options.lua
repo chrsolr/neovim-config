@@ -48,6 +48,9 @@ vim.o.completeopt = 'menuone,noselect'
 -- [[ NOTE: You should make sure your terminal supports this ]]
 vim.o.termguicolors = true
 
+-- [[ Set end of buffer to empty ]]
+vim.opt.fillchars = 'eob: '
+
 -- [[ Copilot ]]
 -- vim.g.copilot_no_tab_map = true
 -- vim.g.copilot_assume_mapped = true

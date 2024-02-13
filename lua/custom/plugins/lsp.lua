@@ -13,8 +13,12 @@ return {
     -- Useful status updates for LSP
     {
       'j-hui/fidget.nvim',
-      tag = 'legacy',
-      opts = {},
+      tag = 'v1.3.0',
+      opts = {
+        notification = {
+          window = { winblend = 0 },
+        },
+      },
     },
 
     -- Additional lua configuration, makes nvim stuff amazing!
@@ -33,12 +37,12 @@ return {
 
       nmap('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
       nmap('<leader>.rr', vim.lsp.buf.rename, 'Code Rename')
-      nmap('<leader>.df', vim.lsp.buf.definition, 'Go to Definition')
+      nmap('<leader>.gd', vim.lsp.buf.definition, 'Go to Definition')
+      nmap('<leader>.gr', require('telescope.builtin').lsp_references, 'Go to References')
+      nmap('<leader>.gt', vim.lsp.buf.type_definition, 'Type Definition')
+      nmap('<leader>.gi', vim.lsp.buf.implementation, 'Go to Implementation')
+      nmap('<leader>.gdc', vim.lsp.buf.declaration, 'Go to Declaration')
       nmap('gd', vim.lsp.buf.definition, 'Go to Definition')
-      nmap('<leader>.rf', require('telescope.builtin').lsp_references, 'Go to References')
-      nmap('<leader>.td', vim.lsp.buf.type_definition, 'Type Definition')
-      nmap('<leader>.ip', vim.lsp.buf.implementation, 'Go to Implementation')
-      nmap('<leader>.dc', vim.lsp.buf.declaration, 'Go to Declaration')
 
       -- [[ LSP Unmapped ]]
       -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
@@ -52,12 +56,6 @@ return {
       -- [[ Create a :Format Command ]]
       --
       vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-        -- local conform = require 'conform'
-        -- conform.format {
-        --   lsp_fallback = true,
-        --   async = true,
-        --   timeout_ms = 500,
-        -- }
         vim.lsp.buf.format()
       end, { desc = 'Format current buffer with vim.lsp.buf.format()' })
     end
