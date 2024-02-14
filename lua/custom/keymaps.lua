@@ -107,20 +107,23 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- [[ Spell Check ]]
+vim.keymap.set('n', '<leader>-z=', 'z=', { noremap = true, desc = 'Spell: Show Suggestions' })
+vim.keymap.set('n', '<leader>-za', 'zg', { noremap = true, desc = 'Spell: Add to Dictionary' })
+vim.keymap.set('n', '<leader>-zT', function()
+  ---@diagnostic disable-next-line: param-type-mismatch
+  vim.opt_local.spell = not (vim.opt_local.spell:get())
+  print('spell local: ' .. tostring(vim.o.spell))
+end, { noremap = true, desc = 'Toggle spell check (Local)' })
+
+vim.keymap.set('n', '<leader>-zt', function()
+  ---@diagnostic disable-next-line: param-type-mismatch
+  vim.opt.spell = not (vim.opt.spell:get())
+  print('spell global: ' .. tostring(vim.o.spell))
+end, { noremap = true, desc = 'Toggle spell check (Global)' })
+
 -- [[ Unmapped ]]
 -- -- Spell Check
--- vim.keymap.set('n', '<leader>-z=', 'z=', { noremap = true, desc = 'Spell: Show Suggestions' })
--- vim.keymap.set('n', '<leader>-za', 'zg', { noremap = true, desc = 'Spell: Add to Dictionary' })
--- vim.keymap.set('n', '<leader>-zT', function()
---   ---@diagnostic disable-next-line: param-type-mismatch
---   vim.opt_local.spell = not (vim.opt_local.spell:get())
---   print('spell local: ' .. tostring(vim.o.spell))
--- end, { noremap = true, desc = 'Toggle spell check (Local)' })
--- vim.keymap.set('n', '<leader>-zt', function()
---   ---@diagnostic disable-next-line: param-type-mismatch
---   vim.opt.spell = not (vim.opt.spell:get())
---   print('spell global: ' .. tostring(vim.o.spell))
--- end, { noremap = true, desc = 'Toggle spell check (Global)' })
 --
 --
 -- -- Actions & Misc
