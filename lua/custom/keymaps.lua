@@ -54,14 +54,15 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, desc = 'Move line
 -- [[ Telescope ]]
 -- :help telescope.builtin
 --
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Find Files' })
-vim.keymap.set('n', '<leader>fr', require('telescope.builtin').oldfiles, { desc = 'Find recently opened files' })
-vim.keymap.set('n', '<leader>fg', require('telescope.builtin').git_files, { desc = 'Find git files' })
-vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = 'Search Help' })
-vim.keymap.set('n', '<leader>fa', require('telescope.builtin').live_grep, { desc = 'Search by Grep' })
-vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = 'Search current Word' })
-vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = 'Search Diagnostics' })
+local builtin = require 'telescope.builtin'
+vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = 'Find existing buffers' })
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files' })
+vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Find recently opened files' })
+vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = 'Find git files' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Search Help' })
+vim.keymap.set('n', '<leader>fa', builtin.live_grep, { desc = 'Search by Grep' })
+vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Search current Word' })
+vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Search Diagnostics' })
 vim.keymap.set('n', '<leader>fi', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
