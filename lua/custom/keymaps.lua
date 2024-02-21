@@ -34,7 +34,7 @@ vim.keymap.set('n', '<leader>-vl', '<cmd> Lazy <CR>', { noremap = true, desc = '
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Open parent directory' })
 vim.keymap.set('n', '<C-c>', '<cmd>:qa<CR>', { desc = 'Exit Neovim' })
 vim.keymap.set('n', '<leader>tm', '<cmd> term <CR> i', { noremap = true })
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set('n', '<leader>gg', '<cmd> LazyGit <CR>', { noremap = true, desc = 'Open LazyGit' })
 vim.keymap.set('n', '<leader>u', '<cmd> UUID <CR>', { noremap = true, desc = 'Insert UUID' })
 
