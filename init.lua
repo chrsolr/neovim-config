@@ -1,51 +1,48 @@
--- [[ Set leader to <space> ]]
---
+-- Set leader to <space>
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- [[ Install Package Manager ]]
+-- Install Package Manager
 -- `:help lazy.nvim.text` for more information
 --
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
-    'git',
-    'clone',
-    '--filter=blob:none',
-    'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable', -- latest stable release
-    lazypath,
-  }
-end
+  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+  vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 --
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight on yank',
+  group = vim.api.nvim_create_augroup('TextkHighlight', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
-  group = highlight_group,
   pattern = '*',
 })
 
--- [[ Install and Config Plugins ]]
+-- Install and config plugins
 --
 require('lazy').setup({
-  -- [[ Install plugins from the custom folder ]]
-  --
   { import = 'custom.plugins' },
 }, {})
 
--- [[ Options and Keymaps ]]
+-- Custom options
 --
 require 'custom.options'
+
+-- Custom keymaps
+--
 require 'custom.keymaps'
+
+-- Custom Snippets
+--
 require 'custom.snippets'
 
--- [[ Setup neovim lua configuration ]]
+-- Setup neovim lua configuration
 --
 require('neodev').setup()
 

@@ -9,6 +9,7 @@ return {
       config = true,
     },
     'williamboman/mason-lspconfig.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP
     {
@@ -26,39 +27,48 @@ return {
   },
 
   config = function()
-    local on_attach = function(_, bufnr)
-      local nmap = function(keys, func, desc)
-        if desc then
-          desc = 'LSP: ' .. desc
+    vim.api.nvim_create_autocmd('LspAttach', {
+      group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+      callback = function(event)
+        local map = function(keys, func, desc)
+          vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
-      end
+        map('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
+        map('<leader>.rr', vim.lsp.buf.rename, 'Code Rename')
+        map('<leader>.gd', vim.lsp.buf.definition, 'Go to Definition')
+        map('<leader>.gr', require('telescope.builtin').lsp_references, 'Go to References')
+        map('<leader>.gt', vim.lsp.buf.type_definition, 'Type Definition')
+        map('<leader>.gi', vim.lsp.buf.implementation, 'Go to Implementation')
+        map('<leader>.gdc', vim.lsp.buf.declaration, 'Go to Declaration')
+        map('gd', vim.lsp.buf.definition, 'Go to Definition')
 
-      nmap('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
-      nmap('<leader>.rr', vim.lsp.buf.rename, 'Code Rename')
-      nmap('<leader>.gd', vim.lsp.buf.definition, 'Go to Definition')
-      nmap('<leader>.gr', require('telescope.builtin').lsp_references, 'Go to References')
-      nmap('<leader>.gt', vim.lsp.buf.type_definition, 'Type Definition')
-      nmap('<leader>.gi', vim.lsp.buf.implementation, 'Go to Implementation')
-      nmap('<leader>.gdc', vim.lsp.buf.declaration, 'Go to Declaration')
-      nmap('gd', vim.lsp.buf.definition, 'Go to Definition')
+        -- [[ LSP Unmapped ]]
+        -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
+        -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
+        -- nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Workspace Add Folder')
+        -- nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Workspace Remove Folder')
+        -- nmap('<leader>wl', function()
+        -- 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        -- end, 'Workspace List Folders')
 
-      -- [[ LSP Unmapped ]]
-      -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
-      -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
-      -- nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Workspace Add Folder')
-      -- nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Workspace Remove Folder')
-      -- nmap('<leader>wl', function()
-      -- 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      -- end, 'Workspace List Folders')
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        if client and client.server_capabilities.documentFormattingProvider then
+          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            buffer = event.buf,
+            callback = vim.lsp.buf.document_highlight,
+          })
 
-      -- [[ Create a :Format Command ]]
-      --
-      vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-        vim.lsp.buf.format()
-      end, { desc = 'Format current buffer with vim.lsp.buf.format()' })
-    end
+          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            buffer = event.buf,
+            callback = vim.lsp.buf.clear_references,
+          })
+        end
+      end,
+    })
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {
       html = {},
@@ -71,32 +81,38 @@ return {
         autostart = false,
       },
       lua_ls = {
-        Lua = {
-          workspace = { checkThirdParty = false },
-          telemetry = { enable = false },
+        settings = {
+          Lua = {
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+            runtime = { version = 'LuaJIT' },
+            diagnostics = { disable = { 'missing-fields' } },
+          },
         },
       },
     }
 
-    local mason_lspconfig = require 'mason-lspconfig'
+    local ensure_installed = vim.tbl_keys(servers or {})
+    vim.list_extend(ensure_installed, {
+      'stylua',
+    })
 
-    -- nvim-cmp supports additional completion capabilities,
-    -- so broadcast that to servers
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-    mason_lspconfig.setup {
-      ensure_installed = vim.tbl_keys(servers),
+    require('mason-tool-installer').setup {
+      ensure_installed = ensure_installed,
     }
 
-    mason_lspconfig.setup_handlers {
-      function(server_name)
-        require('lspconfig')[server_name].setup {
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = servers[server_name],
-        }
-      end,
+    require('mason-lspconfig').setup {
+      handlers = {
+        function(server_name)
+          local server = servers[server_name] or {}
+          require('lspconfig')[server_name].setup {
+            cmd = server.cmd,
+            settings = server.settings,
+            filetypes = server.filetypes,
+            capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {}),
+          }
+        end,
+      },
     }
   end,
 }
