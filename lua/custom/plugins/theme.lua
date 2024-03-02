@@ -23,7 +23,7 @@ local solarized_osaka = {
   lazy = false,
   config = function()
     require('solarized-osaka').setup {
-      style = 'day',
+      -- style = 'day',
       on_highlights = function(hl, c)
         hl.TelescopeNormal = {
           bg = c.bg_dark,
@@ -54,11 +54,11 @@ local solarized_osaka = {
         }
       end,
     }
-    vim.cmd [[colorscheme solarized-osaka]]
+    -- vim.cmd [[colorscheme solarized-osaka]]
     -- vim.cmd [[colorscheme solarized-osaka-day]]
     -- vim.cmd [[colorscheme solarized-osaka-night]]
     -- vim.cmd [[colorscheme solarized-osaka-storm]]
-    -- vim.cmd [[colorscheme solarized-osaka-moon]]
+    vim.cmd [[colorscheme solarized-osaka-moon]]
   end,
 }
 
@@ -75,6 +75,17 @@ local catppuccin = {
       flavour = 'mocha',
     }
     vim.cmd.colorscheme 'catppuccin'
+  end,
+}
+
+local bluloco = {
+  'uloco/bluloco.nvim',
+  lazy = false,
+  priority = 1000,
+  dependencies = { 'rktjmp/lush.nvim' },
+  config = function()
+    require('bluloco').setup {}
+    vim.cmd.colorscheme 'bluloco'
   end,
 }
 
