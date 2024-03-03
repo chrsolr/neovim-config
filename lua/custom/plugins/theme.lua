@@ -70,8 +70,9 @@ local catppuccin = {
   priority = 1000,
   config = function()
     require('catppuccin').setup {
-      -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-      -- latte, frappe, macchiato, mocha
+      -- flavour = 'latte',
+      -- flavour = 'frappe',
+      -- flavour = 'macchiato',
       flavour = 'mocha',
     }
     vim.cmd.colorscheme 'catppuccin'
@@ -89,4 +90,4 @@ local bluloco = {
   end,
 }
 
-return solarized_osaka
+return catppuccin
