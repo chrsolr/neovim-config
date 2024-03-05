@@ -10,11 +10,11 @@ return {
 
     {
       'j-hui/fidget.nvim',
---      tag = 'v1.3.0',
+      --      tag = 'v1.3.0',
       opts = {
---       notification = {
---         window = { winblend = 0 },
---      },
+        --       notification = {
+        --         window = { winblend = 0 },
+        --      },
       },
     },
 
