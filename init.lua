@@ -58,7 +58,7 @@ require 'custom.options'
 
 -- Custom keymaps
 --
---require 'custom.keymaps'
+require 'custom.keymaps'
 
 -- Custom Snippets
 --
