@@ -110,16 +110,15 @@ end, { desc = 'Find in Current Buffer' })
 
 -- Search Neovim Configuration
 vim.keymap.set('n', '<leader>fn', function()
-	telescope_builtin.find_files { cwd = vim.fn.stdpath 'config' }
+  telescope_builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = 'Find in Neovim Files' })
-
 
 -- Search Neovim Configuration
 vim.keymap.set('n', '<leader>f.', function()
-	telescope_builtin.live_grep { 
-		grep_open_files = true,
-		prompt_title = 'Live Grep in Open Files',
-	}
+  telescope_builtin.live_grep {
+    grep_open_files = true,
+    prompt_title = 'Live Grep in Open Files',
+  }
 end, { desc = 'Find in Neovim Files' })
 
 -- Move to previous buffer
@@ -213,3 +212,23 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 
 -- Go to previous diagnostic message
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+
+-- -- Codeium Accept
+-- vim.keymap.set('i', '<C-;>', function()
+--   return vim.fn['codeium#Accept']()
+-- end, { noremap = true, silent = true, desc = 'Codeium: Accept' })
+--
+-- -- Codeium Clear
+-- vim.keymap.set('i', '<C-x>', function()
+--   return vim.fn['codeium#Clear']()
+-- end, { noremap = true, silent = true, desc = 'Codeium: Clear' })
+--
+-- -- Codeium Clear
+-- vim.keymap.set('i', '<C-[>', function()
+--   return vim.fn['codeium#CycleCompletions'](-1)
+-- end, { noremap = true, silent = true, desc = 'Codeium: Previous' })
+--
+-- -- Codeium Clear
+-- vim.keymap.set('i', '<C-]>', function()
+--   return vim.fn['codeium#CycleCompletions'](1)
+-- end, { noremap = true, silent = true, desc = 'Codeium: Next' })

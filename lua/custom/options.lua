@@ -77,3 +77,8 @@ vim.opt.fillchars = 'eob: '
 -- vim.g.copilot_no_tab_map = true
 -- vim.g.copilot_assume_mapped = true
 -- vim.g.copilot_tab_fallback = ''
+
+-- Codeium
+-- vim.g.codeium_no_tab_map = 1
+-- vim.g.codeium_disable_bindings = 0
+vim.g.codeium_enabled = false
