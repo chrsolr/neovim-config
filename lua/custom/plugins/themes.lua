@@ -13,6 +13,7 @@ local tokyonight = {
       transparent = false,
     }
     vim.cmd.colorscheme 'tokyonight'
+    vim.cmd.hi 'Comment qui=none'
   end,
 }
 
@@ -76,6 +77,7 @@ local catppuccin = {
       flavour = 'mocha',
     }
     vim.cmd.colorscheme 'catppuccin'
+    vim.cmd.hi 'Comment gui=none'
   end,
 }
 

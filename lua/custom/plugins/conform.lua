@@ -4,30 +4,27 @@ return {
     'BufReadPre',
     'BufNewFile',
   },
-  config = function()
-    local conform = require 'conform'
-
-    conform.setup {
-      formatters_by_ft = {
-        javascript = { { 'prettier' } },
-        typescript = { { 'prettier' } },
-        javascriptreact = { { 'prettier' } },
-        typescriptreact = { { 'prettier' } },
-        css = { { 'prettier' } },
-        tailwindcss = { { 'prettier' } },
-        html = { { 'prettier' } },
-        json = { { 'prettier' } },
-        yaml = { { 'prettier' } },
-        markdown = { { 'prettier' } },
-        lua = { { 'stylua' } },
-        toml = { 'taplo' },
-        cs = { 'csharpier' },
-      },
-      format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 500,
-      },
-    }
-  end,
+  opts = {
+    notify_on_error = false,
+    formatters_by_ft = {
+      javascript = { { 'prettierd' } },
+      typescript = { { 'prettierd' } },
+      javascriptreact = { { 'prettierd' } },
+      typescriptreact = { { 'prettierd' } },
+      css = { { 'prettierd' } },
+      tailwindcss = { { 'prettierd' } },
+      html = { { 'prettierd' } },
+      json = { { 'prettierd' } },
+      yaml = { { 'prettierd' } },
+      markdown = { { 'prettierd' } },
+      lua = { { 'stylua' } },
+      toml = { 'taplo' },
+      cs = { 'csharpier' },
+    },
+    format_on_save = {
+      lsp_fallback = true,
+      async = false,
+      timeout_ms = 500,
+    },
+  },
 }
