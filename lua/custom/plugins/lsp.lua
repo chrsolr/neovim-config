@@ -7,18 +7,10 @@ return {
     },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-
     {
       'j-hui/fidget.nvim',
-      --      tag = 'v1.3.0',
-      opts = {
-        --       notification = {
-        --         window = { winblend = 0 },
-        --      },
-      },
+      opts = {},
     },
-
-    -- Additional lua configuration, makes nvim stuff amazing!
     'folke/neodev.nvim',
   },
 

@@ -46,6 +46,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- Map the command to a key combination
+vim.api.nvim_set_keymap('n', '<Leader>bc', ':BufCurOnly<CR>', { noremap = true, silent = true })
+
 -- Install and config plugins
 --
 require('lazy').setup {

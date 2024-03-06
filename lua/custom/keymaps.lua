@@ -137,7 +137,7 @@ vim.keymap.set('n', '<leader>s', '<cmd> sp <CR>', { noremap = true, desc = 'Spli
 vim.keymap.set('n', '<leader>x', '<cmd> bd <CR>', { noremap = true, desc = 'Close Buffer' })
 
 -- Close other buffers
-vim.keymap.set('n', '<leader>X', '<cmd> %bd <CR>', { noremap = true, desc = 'Close all Buffer' })
+vim.keymap.set('n', '<leader>X', '<cmd> %bdelete|edit #|normal `" <CR>', { noremap = true, desc = 'Close Other Buffer' })
 
 -- Increase vertical split
 vim.keymap.set('n', '<leader>l', '<cmd> vertical resize +5 <CR>', { noremap = true, desc = 'Increase vertical split' })
