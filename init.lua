@@ -65,7 +65,7 @@ require 'custom.keymaps'
 
 -- Custom Snippets
 --
---require 'custom.snippets'
+require 'custom.snippets'
 
 -- Setup neovim lua configuration
 --
