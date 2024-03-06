@@ -134,10 +134,10 @@ vim.keymap.set('n', '<leader>v', '<cmd> vsp <CR>', { noremap = true, desc = 'Spl
 vim.keymap.set('n', '<leader>s', '<cmd> sp <CR>', { noremap = true, desc = 'Split Horizontal' })
 
 -- Close buffer
-vim.keymap.set('n', '<leader>x', '<cmd> BufDel <CR>', { noremap = true, desc = 'Close buffer' })
+vim.keymap.set('n', '<leader>x', '<cmd> bd <CR>', { noremap = true, desc = 'Close Buffer' })
 
 -- Close other buffers
-vim.keymap.set('n', '<leader>X', '<cmd> BufDelOthers <CR>', { noremap = true, desc = 'Close other buffer' })
+vim.keymap.set('n', '<leader>X', '<cmd> %bd <CR>', { noremap = true, desc = 'Close all Buffer' })
 
 -- Increase vertical split
 vim.keymap.set('n', '<leader>l', '<cmd> vertical resize +5 <CR>', { noremap = true, desc = 'Increase vertical split' })
