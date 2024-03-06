@@ -52,7 +52,7 @@ vim.keymap.set({ 'n', 'v', 'i' }, '<C-s>', '<ESC><cmd> w <CR>', { noremap = true
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-S>', '<ESC><cmd> wa <CR>', { noremap = true, desc = 'Save Files' })
 
 -- Save all buffers with leader
-vim.keymap.set({ 'n' }, '<leader>ww', '<ESC><cmd> wa <CR>', { noremap = true, desc = 'Save Files' })
+vim.keymap.set('n', '<leader>ww', '<ESC><cmd> wa <CR>', { noremap = true, desc = 'Save Files' })
 
 -- Scroll Up & Center
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, desc = 'Scroll Up & Center' })
