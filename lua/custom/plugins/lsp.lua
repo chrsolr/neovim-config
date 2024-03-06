@@ -34,7 +34,7 @@ return {
         map('gr', require('telescope.builtin').lsp_references, 'Go to References')
         map('gi', vim.lsp.buf.implementation, 'Go to Implementation')
         map('gt', vim.lsp.buf.type_definition, 'Type Definition')
-        map('gd', vim.lsp.buf.declaration, 'Go to Declaration')
+        map('gD', vim.lsp.buf.declaration, 'Go to Declaration')
         map('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
         map('<leader>rn', vim.lsp.buf.rename, 'Code Rename')
 
