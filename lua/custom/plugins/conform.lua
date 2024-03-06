@@ -7,10 +7,10 @@ return {
   opts = {
     notify_on_error = false,
     formatters_by_ft = {
-      javascript = { { 'prettierd', 'biome' } },
-      typescript = { { 'prettierd', 'biome' } },
-      javascriptreact = { { 'prettierd', 'biome' } },
-      typescriptreact = { { 'prettierd', 'biome' } },
+      javascript = { { 'biome', 'prettierd' } },
+      typescript = { { 'biome', 'prettierd' } },
+      javascriptreact = { { 'biome', 'prettierd' } },
+      typescriptreact = { { 'biome', 'prettierd' } },
       css = { { 'prettierd', 'biome' } },
       tailwindcss = { { 'prettierd', 'biome' } },
       html = { { 'prettierd', 'biome' } },
