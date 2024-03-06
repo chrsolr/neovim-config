@@ -16,7 +16,6 @@ return {
     'hrsh7th/cmp-path',
     'rafamadriz/friendly-snippets',
   },
-
   config = function()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
