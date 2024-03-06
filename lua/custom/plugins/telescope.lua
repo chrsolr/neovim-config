@@ -18,9 +18,13 @@ return {
     require('telescope').setup {
       defaults = {
         mappings = {
+          n = {
+            ['<C-x>'] = require('telescope.actions').delete_buffer,
+          },
           i = {
             ['<C-u>'] = false,
             ['<C-d>'] = false,
+            ['<C-x>'] = require('telescope.actions').delete_buffer,
           },
         },
       },
