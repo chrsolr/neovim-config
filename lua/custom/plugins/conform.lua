@@ -20,6 +20,7 @@ return {
       lua = { { 'stylua' } },
       toml = { 'taplo' },
       cs = { 'csharpier' },
+      sql = { 'sql_formatter' },
     },
     format_on_save = {
       lsp_fallback = true,
