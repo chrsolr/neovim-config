@@ -14,12 +14,14 @@ rm -rf ~/.local/state/nvim
 
 ```bash
 git clone git@github.com:chrsolr/neovim-config.git ~/.config/nvim
+git checkout nvchad
 ```
 
 **Config (Windows)**
 
 ```bash
 git clone git@github.com:chrsolr/neovim-config.git %userprofile%\AppData\Local\nvim\
+git checkout nvchad
 ```
 
 ### Cheatsheet

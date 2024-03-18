@@ -14,15 +14,15 @@ map("v", "$", "g_", { noremap = true })
 -- Escape insert mode with jk
 map("i", "jk", "<ESC>", { noremap = true })
 
--- -- Show Signature Help
--- map('n', '<leader>.sh', vim.lsp.buf.signature_help, { noremap = true, desc = 'LSP: Signature Help' })
---
--- -- Show diagnostics (errors and warnings)
--- map('n', '<leader>.e', vim.diagnostic.open_float, { desc = 'LSP: Floating Diagnostic' })
---
--- -- Show a list of diagnostics
--- map('n', '<leader>.q', vim.diagnostic.setloclist, { desc = 'LSP: Quickfix list' })
---
+-- Show Signature Help
+map("n", "<leader>.sh", vim.lsp.buf.signature_help, { noremap = true, desc = "LSP: Signature Help" })
+
+-- Show diagnostics (errors and warnings)
+map("n", "<leader>.e", vim.diagnostic.open_float, { desc = "LSP: Floating Diagnostic" })
+
+-- Show a list of diagnostics
+map("n", "<leader>.q", vim.diagnostic.setloclist, { desc = "LSP: Quickfix list" })
+
 -- Displays hover information about the symbol under the cursor in a floating
 map("n", "K", vim.lsp.buf.hover, { noremap = true, desc = "LSP: Hover" })
 
@@ -36,21 +36,21 @@ map({ "n", "v" }, "<leader>fm", function()
 	})
 end, { desc = "Format current buffer with Conform or LSP" })
 
--- -- Open directories
--- map('n', '-', '<cmd>Oil<CR>', { desc = 'Open directories' })
+-- Open directories
+map("n", "-", "<cmd>Oil<CR>", { desc = "Open directories" })
 
 -- Open terminal in a new buffer
 map("n", "<leader>tm", "<cmd> term <CR> i", { noremap = true, desc = "Open terminal in a new buffer" })
 
 -- Terminal New horizontal term
-map("n", "<leader>th", function()
-	require("nvchad.term").new({ pos = "sp", size = 0.3 })
-end, { desc = "Terminal New horizontal term" })
+-- map("n", "<leader>th", function()
+-- 	require("nvchad.term").new({ pos = "sp", size = 0.3 })
+-- end, { desc = "Terminal New horizontal term" })
 
 -- Terminal New vertical window
-map("n", "<leader>tv", function()
-	require("nvchad.term").new({ pos = "vsp", size = 0.3 })
-end, { desc = "Terminal New vertical window" })
+-- map("n", "<leader>tv", function()
+-- 	require("nvchad.term").new({ pos = "vsp", size = 0.3 })
+-- end, { desc = "Terminal New vertical window" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>.
