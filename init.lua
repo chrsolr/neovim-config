@@ -1,75 +1,39 @@
---[[
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-========                                    .-----.          ========
-========         .----------------------.   | === |          ========
-========         |.-""""""""""""""""""-.|   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||   KICKSTART.NVIM   ||   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||                    ||   |-----|          ========
-========         ||:Tutor              ||   |:::::|          ========
-========         |'-..................-'|   |____o|          ========
-========         `"")----------------(""`   ___________      ========
-========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========
-========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
-========                                                     ========
-=====================================================================
-=====================================================================
---]]
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
+vim.g.mapleader = " "
 
--- Set leader to <space>
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
--- Install Package Manager
--- `:help lazy.nvim.text` for more information
---
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-end ---@diagnostic disable-next-line: undefined-field
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+end
+
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
---
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight on yank',
-  group = vim.api.nvim_create_augroup('TextkHighlight', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  pattern = '*',
-})
+local lazy_config = require "configs.lazy"
 
--- Map the command to a key combination
-vim.api.nvim_set_keymap('n', '<Leader>bc', ':BufCurOnly<CR>', { noremap = true, silent = true })
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+    config = function()
+      require "options"
+    end,
+  },
 
--- Install and config plugins
---
-require('lazy').setup {
-  { import = 'custom.plugins' },
-}
+  { import = "plugins" },
+}, lazy_config)
 
--- Custom options
---
-require 'custom.options'
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
 
--- Custom keymaps
---
-require 'custom.keymaps'
+require "nvchad.autocmds"
 
--- Custom Snippets
---
-require 'custom.snippets'
-
--- Setup neovim lua configuration
---
-require('neodev').setup()
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+vim.schedule(function()
+  require "mappings"
+end)

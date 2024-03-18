@@ -1,3 +1,5 @@
+require "nvchad.options"
+
 -- Setting options
 -- See `:help vim.opt`
 
