@@ -5,7 +5,7 @@ return {
 			"BufReadPre",
 			"BufNewFile",
 		},
-		-- lazy = false,
+		lazy = false,
 		config = function()
 			require("configs.conform")
 		end,
