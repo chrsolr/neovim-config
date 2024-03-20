@@ -5,7 +5,7 @@ local on_init = configs.on_init
 local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
-local servers = { "html", "cssls", "clangd", "tsserver" }
+local servers = { "html", "cssls", "clangd", "tsserver", "tailwindcss" }
 
 -- local servers = {
 -- 	html = {},
