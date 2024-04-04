@@ -187,13 +187,13 @@ map(
 )
 
 --
-map({ "n" }, "<leader>.cfh", function()
+map({ "n", "v" }, "<leader>.cfh", function()
 	local actions = require("CopilotChat.actions")
 	require("CopilotChat.integrations.telescope").pick(actions.help_actions())
 end, { desc = "Copilot Chat Help" })
 
 --
-map({ "n" }, "<leader>.cca", function()
+map({ "n", "v" }, "<leader>.cca", function()
 	local actions = require("CopilotChat.actions")
 	require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
 end, { desc = "Copilot Chat Actions" })
