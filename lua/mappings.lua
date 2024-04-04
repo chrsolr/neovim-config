@@ -162,6 +162,42 @@ map("n", "<leader>tt", "<cmd> TroubleToggle <CR>", { noremap = true, desc = "Tog
 -- Accept the current suggestion
 map("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
 
+-- Copilot Chat Toggle
+map(
+	{ "n", "v" },
+	"<leader>.cct",
+	"<cmd> CopilotChatToggle <CR>",
+	{ silent = true, replace_keycodes = false, desc = "Copilot Chat Toggle" }
+)
+
+-- Copilot Chat Optimize
+map(
+	{ "n", "v" },
+	"<leader>.cco",
+	"<cmd> CopilotChatOptimize <CR>",
+	{ silent = true, replace_keycodes = false, desc = "Copilot Chat Optimize" }
+)
+
+-- Copilot Chat Explain
+map(
+	{ "n", "v" },
+	"<leader>.cce",
+	"<cmd> CopilotChatExplain <CR>",
+	{ silent = true, replace_keycodes = false, desc = "Copilot Chat Explain" }
+)
+
+--
+map({ "n" }, "<leader>.cfh", function()
+	local actions = require("CopilotChat.actions")
+	require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+end, { desc = "Copilot Chat Help" })
+
+--
+map({ "n" }, "<leader>.cca", function()
+	local actions = require("CopilotChat.actions")
+	require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+end, { desc = "Copilot Chat Actions" })
+
 -- -- Move to next suggestion
 -- map('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
 --
