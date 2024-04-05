@@ -165,35 +165,13 @@ map("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true, replac
 -- Copilot Chat Toggle
 map(
 	{ "n", "v" },
-	"<leader>.cct",
+	"<leader>cc",
 	"<cmd> CopilotChatToggle <CR>",
 	{ silent = true, replace_keycodes = false, desc = "Copilot Chat Toggle" }
 )
 
--- Copilot Chat Optimize
-map(
-	{ "n", "v" },
-	"<leader>.cco",
-	"<cmd> CopilotChatOptimize <CR>",
-	{ silent = true, replace_keycodes = false, desc = "Copilot Chat Optimize" }
-)
-
--- Copilot Chat Explain
-map(
-	{ "n", "v" },
-	"<leader>.cce",
-	"<cmd> CopilotChatExplain <CR>",
-	{ silent = true, replace_keycodes = false, desc = "Copilot Chat Explain" }
-)
-
 --
-map({ "n", "v" }, "<leader>.cfh", function()
-	local actions = require("CopilotChat.actions")
-	require("CopilotChat.integrations.telescope").pick(actions.help_actions())
-end, { desc = "Copilot Chat Help" })
-
---
-map({ "n", "v" }, "<leader>.cca", function()
+map({ "n", "v" }, "<leader>fc", function()
 	local actions = require("CopilotChat.actions")
 	require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
 end, { desc = "Copilot Chat Actions" })
