@@ -56,8 +56,8 @@ vim.opt.scrolloff = 10
 -- Set highlight on search
 vim.opt.hlsearch = false
 
--- Indent
--- Set highlight on search
+-- Tab settings
+vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
