@@ -1,5 +1,5 @@
 local options = {
-	notify_on_error = false,
+	notify_on_error = true,
 	formatters_by_ft = {
 		javascript = { { "prettierd" } },
 		typescript = { { "prettierd" } },
@@ -15,6 +15,16 @@ local options = {
 		toml = { "taplo" },
 		cs = { "csharpier" },
 		sql = { "sql_formatter" },
+	},
+	formatters = {
+		sql_formatter = {
+			command = "sql-formatter",
+			args = {
+				"-c",
+				'{ "expressionWidth": 80, "tabWidth": 2, "keywordCase": "upper", "language": "postgresql" }',
+			},
+			stdin = true,
+		},
 	},
 	format_on_save = {
 		lsp_fallback = true,
