@@ -1,10 +1,11 @@
 return {
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
+		enabled = true,
 		branch = "canary",
 		lazy = false,
 		dependencies = {
-			{ "github/copilot.vim" },
+			{ "zbirenbaum/copilot.lua" },
 			{ "nvim-lua/plenary.nvim" },
 		},
 		opts = {

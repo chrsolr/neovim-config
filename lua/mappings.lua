@@ -160,7 +160,8 @@ map("n", "<C-q>", "<C-w>q", { noremap = true, desc = "Close pane" })
 map("n", "<leader>tt", "<cmd> TroubleToggle <CR>", { noremap = true, desc = "Toggle trouble" })
 
 -- Accept the current suggestion
-map("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
+-- map("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
+-- map("i", "<C-a>", "codeium#Accept()", { silent = true, expr = true, replace_keycodes = false })
 
 -- Copilot Chat Toggle
 map(
@@ -169,6 +170,12 @@ map(
 	"<cmd> CopilotChatToggle <CR>",
 	{ silent = true, replace_keycodes = false, desc = "Copilot Chat Toggle" }
 )
+-- map(
+-- 	{ "n", "v" },
+-- 	"<leader>cc",
+-- 	"<cmd> codeium#Chat() <CR>",
+-- 	{ silent = true, replace_keycodes = false, desc = "Copilot Chat Toggle" }
+-- )
 
 --
 map({ "n", "v" }, "<leader>fc", function()

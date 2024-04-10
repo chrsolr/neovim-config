@@ -3,6 +3,9 @@ require("nvchad.options")
 -- Setting options
 -- See `:help vim.opt`
 
+-- Set Mac Meta key
+-- vim.o.macmeta = true
+
 -- Make line numbers default
 vim.opt.relativenumber = true
 vim.opt.number = true
