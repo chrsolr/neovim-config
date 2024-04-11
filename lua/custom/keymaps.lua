@@ -170,13 +170,13 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, desc = 'Move to right p
 vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, desc = 'Toggle trouble' })
 
 -- Accept the current suggestion
-vim.keymap.set('i', '<C-a>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
+-- vim.keymap.set('i', '<C-a>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
 
 -- Move to next suggestion
-vim.keymap.set('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
+-- vim.keymap.set('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
 
 -- Move to previous suggestion
-vim.keymap.set('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
+-- vim.keymap.set('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
 
 -- Do nothing when space is pressed in normal and visual mode
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
