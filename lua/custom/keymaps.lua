@@ -178,6 +178,15 @@ vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, 
 -- Move to previous suggestion
 -- vim.keymap.set('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
 
+-- Copilot Chat Toggle
+vim.keymap.set({ 'n', 'v' }, '<leader>cc', '<cmd> CopilotChatToggle <CR>', { silent = true, replace_keycodes = false, desc = 'Copilot Chat Toggle' })
+
+-- Copilot Chat Actions
+vim.keymap.set({ 'n', 'v' }, '<leader>fc', function()
+  local actions = require 'CopilotChat.actions'
+  require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
+end, { desc = 'Copilot Chat Actions' })
+
 -- Do nothing when space is pressed in normal and visual mode
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
