@@ -111,4 +111,4 @@ local rose_pine = {
   end,
 }
 
-return rose_pine --catppuccin
+return rose_pine
