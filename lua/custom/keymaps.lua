@@ -35,6 +35,9 @@ end, { desc = 'Format current buffer with Conform or LSP' })
 -- Open directories
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Open directories' })
 
+-- Toggle NvimTree
+vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Open directories' })
+
 -- Open terminal in a new buffer
 vim.keymap.set('n', '<leader>tm', '<cmd> term <CR> i', { noremap = true, desc = 'Open terminal in a new buffer' })
 
