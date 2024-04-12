@@ -15,6 +15,7 @@ local options = {
 		toml = { "taplo" },
 		cs = { "csharpier" },
 		sql = { "sql_formatter" },
+		["*"] = { "codespell" },
 	},
 	formatters = {
 		sql_formatter = {
