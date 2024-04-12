@@ -7,14 +7,15 @@ return {
     require('bufferline').setup {
       options = {
         numbers = 'none',
-        -- offsets = {
-        --   {
-        --     filetype = 'NvimTree',
-        --     text = '',
-        --     highlight = 'Directory',
-        --     separator = false, -- use a "true" to enable the default, or set your own character
-        --   },
-        -- },
+        show_tab_indicators = true,
+        offsets = {
+          {
+            filetype = 'NvimTree',
+            text = '',
+            highlight = 'Directory',
+            separator = true, -- use a "true" to enable the default, or set your own character
+          },
+        },
       },
     }
   end,
