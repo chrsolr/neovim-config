@@ -8,7 +8,7 @@ return {
 		},
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		"folke/neodev.nvim",
+		-- "folke/neodev.nvim",
 	},
 
 	config = function()
@@ -36,18 +36,18 @@ return {
 				-- 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 				-- end, 'Workspace List Folders')
 
-				local client = vim.lsp.get_client_by_id(event.data.client_id)
-				if client and client.server_capabilities.documentFormattingProvider then
-					vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-						buffer = event.buf,
-						callback = vim.lsp.buf.document_highlight,
-					})
-
-					vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-						buffer = event.buf,
-						callback = vim.lsp.buf.clear_references,
-					})
-				end
+				-- local client = vim.lsp.get_client_by_id(event.data.client_id)
+				-- if client and client.server_capabilities.documentFormattingProvider then
+				-- 	vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+				-- 		buffer = event.buf,
+				-- 		callback = vim.lsp.buf.document_highlight,
+				-- 	})
+				--
+				-- 	vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+				-- 		buffer = event.buf,
+				-- 		callback = vim.lsp.buf.clear_references,
+				-- 	})
+				-- end
 			end,
 		})
 
