@@ -5,29 +5,7 @@ local on_init = configs.on_init
 local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
-local servers = { "html", "cssls", "clangd", "tsserver", "tailwindcss" }
-
--- local servers = {
--- 	html = {},
--- 	cssls = {},
--- 	tsserver = {},
--- 	tailwindcss = {},
--- 	emmet_language_server = {},
--- 	csharp_ls = {},
--- 	dockerls = {
--- 		autostart = false,
--- 	},
--- 	lua_ls = {
--- 		settings = {
--- 			Lua = {
--- 				workspace = { checkThirdParty = false },
--- 				telemetry = { enable = false },
--- 				runtime = { version = "LuaJIT" },
--- 				diagnostics = { disable = { "missing-fields" } },
--- 			},
--- 		},
--- 	},
--- }
+local servers = {}
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
