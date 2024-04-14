@@ -1,5 +1,7 @@
 -- [[ Basic Keymaps ]]
 -- See `:help vim.keymap.set()`
+--
+vim.keymap.set('n', '<leader>rr', '<cmd>colorscheme serika <CR>', { noremap = true })
 
 -- Better copy and paste in visual mode
 vim.keymap.set('v', 'p', '"_dP', { noremap = true })

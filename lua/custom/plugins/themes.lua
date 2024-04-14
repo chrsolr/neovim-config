@@ -111,4 +111,12 @@ local rose_pine = {
   end,
 }
 
-return rose_pine
+local serika_dark = {
+  dir = '~/dev/serika',
+  lazy = false,
+  config = function()
+    vim.cmd 'colorscheme serika'
+  end,
+}
+
+return serika_dark -- rose_pine
