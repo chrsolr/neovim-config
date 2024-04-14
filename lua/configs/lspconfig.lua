@@ -14,6 +14,7 @@ local servers = {
 	"csharp_ls",
 	"dockerls",
 	"lua_ls",
+	"yamlls",
 }
 
 for _, lsp in ipairs(servers) do
