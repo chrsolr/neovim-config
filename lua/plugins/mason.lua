@@ -9,6 +9,7 @@ return {
 			"eslint_d",
 			"typescript-language-server",
 			"tailwindcss-language-server",
+			"css-lsp",
 		},
 	},
 }
