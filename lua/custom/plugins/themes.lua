@@ -120,4 +120,5 @@ local serika_dark = {
   end,
 }
 
-return serika_dark -- rose_pine
+-- return serika_dark
+return rose_pine
