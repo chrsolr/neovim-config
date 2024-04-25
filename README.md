@@ -1,27 +1,4 @@
-# Neovim Config
+# 💤 LazyVim
 
-### Clean Neovim
-
-```
-rm -rf ~/.cache/nvim
-rm -rf ~/.local/share/nvim/
-rm -rf ~/.local/state/nvim
-```
-
-### Instructions
-
-**Config (Mac & Linux)**
-
-```bash
-git clone git@github.com:chrsolr/neovim-config.git ~/.config/nvim
-```
-
-**Config (Windows)**
-
-```bash
-git clone git@github.com:chrsolr/neovim-config.git %userprofile%\AppData\Local\nvim\
-```
-
-### Cheatsheet
-
-- View Keymap: `:verbose map KEYMAP`
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
