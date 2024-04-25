@@ -64,6 +64,7 @@ return {
       tailwindcss = {},
       emmet_language_server = {},
       csharp_ls = {},
+      eslint_d = {},
       dockerls = {
         autostart = false,
       },

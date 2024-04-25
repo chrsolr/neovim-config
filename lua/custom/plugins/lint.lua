@@ -1,6 +1,6 @@
 return {
   'mfussenegger/nvim-lint',
-  enabled = false,
+  enabled = true,
   event = {
     'BufReadPre',
     'BufNewFile',
@@ -9,10 +9,10 @@ return {
     local lint = require 'lint'
 
     lint.linters_by_ft = {
-      javascript = { 'biome' },
-      typescript = { 'biome' },
-      javascriptreact = { 'biome' },
-      typescriptreact = { 'biome' },
+      javascript = { 'eslint_d' },
+      typescript = { 'eslint_d' },
+      javascriptreact = { 'eslint_d' },
+      typescriptreact = { 'eslint_d' },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', {
