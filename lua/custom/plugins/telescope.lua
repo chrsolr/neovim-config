@@ -17,6 +17,11 @@ return {
   config = function()
     require('telescope').setup {
       defaults = {
+        sorting_strategy = 'ascending',
+        layout_config = {
+          height = 0.95,
+          prompt_position = 'top',
+        },
         mappings = {
           n = {
             ['<C-x>'] = require('telescope.actions').delete_buffer,
