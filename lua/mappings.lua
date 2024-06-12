@@ -141,23 +141,38 @@ map("n", "<leader>v", "<cmd> vsp <CR>", { noremap = true, desc = "Split Vertical
 -- Split window horizontally
 map("n", "<leader>s", "<cmd> sp <CR>", { noremap = true, desc = "Split Horizontal" })
 
--- -- Increase vertical split
--- map('n', '<leader>l', '<cmd> vertical resize +5 <CR>', { noremap = true, desc = 'Increase vertical split' })
---
--- -- Decrease vertical split
--- map('n', '<leader>h', '<cmd> vertical resize -5 <CR>', { noremap = true, desc = 'Decrease vertical split' })
---
--- -- Increase horizontal split
--- map('n', '<leader>k', '<cmd> horizontal resize -5 <CR>', { noremap = true, desc = 'Decrease horizontal split' })
---
--- -- Decrease horizontal split
--- map('n', '<leader>j', '<cmd> horizontal resize +5 <CR>', { noremap = true, desc = 'Increase horizontal split' })
---
+-- Increase vertical split
+map("n", "<leader>h", "<cmd> vertical resize +5 <CR>", { noremap = true, desc = "Increase vertical split" })
+
+-- Decrease vertical split
+map("n", "<leader>l", "<cmd> vertical resize -5 <CR>", { noremap = true, desc = "Decrease vertical split" })
+
+-- Increase horizontal split
+map("n", "<leader>k", "<cmd> horizontal resize -5 <CR>", { noremap = true, desc = "Decrease horizontal split" })
+
+-- Decrease horizontal split
+map("n", "<leader>j", "<cmd> horizontal resize +5 <CR>", { noremap = true, desc = "Increase horizontal split" })
+
 -- Close current pane
 map("n", "<C-q>", "<C-w>q", { noremap = true, desc = "Close pane" })
 
 -- Open/Close LSP Diagnostics with trouble plugin
-map("n", "<leader>tt", "<cmd> TroubleToggle <CR>", { noremap = true, desc = "Toggle trouble" })
+map(
+	"n",
+	"<leader>tt",
+	"<cmd> Trouble diagnostics toggle filter.buf=0 <CR>",
+	{ noremap = true, desc = "Toggle trouble" }
+)
+map("n", "<leader>tT", "<cmd> Trouble diagnostics toggle <CR>", { noremap = true, desc = "Toggle trouble" })
+map(
+	"n",
+	"<leader>tl",
+	"<cmd> Trouble lsp toggle focus=false win.position=right <CR>",
+	{ noremap = true, desc = "Toggle trouble" }
+)
+map("n", "<leader>ts", "<cmd> Trouble symbols toggle focus=false <CR>", { noremap = true, desc = "Toggle trouble" })
+map("n", "<leader>tc", "<cmd> Trouble loclist toggle <CR>", { noremap = true, desc = "Toggle trouble" })
+map("n", "<leader>tq", "<cmd> Trouble qflist toggle <CR>", { noremap = true, desc = "Toggle trouble" })
 
 -- Accept the current suggestion
 -- map("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
@@ -200,7 +215,7 @@ map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
 map("n", "gt", vim.lsp.buf.type_definition, { desc = "Type Definition" })
 map("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
 map("n", "<leader>..", vim.lsp.buf.code_action, { desc = "Code Actions" })
-map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Code Rename" })
+map("n", "<leader>.rr", vim.lsp.buf.rename, { desc = "Code Rename" })
 
 -- Move line up with wrap
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
