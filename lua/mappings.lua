@@ -161,18 +161,28 @@ map(
 	"n",
 	"<leader>tt",
 	"<cmd> Trouble diagnostics toggle filter.buf=0 <CR>",
-	{ noremap = true, desc = "Toggle trouble" }
+	{ noremap = true, desc = "Toggle trouble diagnostics" }
 )
-map("n", "<leader>tT", "<cmd> Trouble diagnostics toggle <CR>", { noremap = true, desc = "Toggle trouble" })
+map(
+	"n",
+	"<leader>tT",
+	"<cmd> Trouble diagnostics toggle <CR>",
+	{ noremap = true, desc = "Toggle trouble diagnostics (Global)" }
+)
 map(
 	"n",
 	"<leader>tl",
 	"<cmd> Trouble lsp toggle focus=false win.position=right <CR>",
-	{ noremap = true, desc = "Toggle trouble" }
+	{ noremap = true, desc = "Toggle trouble LSP" }
 )
-map("n", "<leader>ts", "<cmd> Trouble symbols toggle focus=false <CR>", { noremap = true, desc = "Toggle trouble" })
-map("n", "<leader>tc", "<cmd> Trouble loclist toggle <CR>", { noremap = true, desc = "Toggle trouble" })
-map("n", "<leader>tq", "<cmd> Trouble qflist toggle <CR>", { noremap = true, desc = "Toggle trouble" })
+map(
+	"n",
+	"<leader>ts",
+	"<cmd> Trouble symbols toggle focus=false <CR>",
+	{ noremap = true, desc = "Toggle trouble symbols" }
+)
+map("n", "<leader>tc", "<cmd> Trouble loclist toggle <CR>", { noremap = true, desc = "Toggle trouble loclist" })
+map("n", "<leader>tq", "<cmd> Trouble qflist toggle <CR>", { noremap = true, desc = "Toggle trouble qflist" })
 
 -- Accept the current suggestion
 -- map("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
