@@ -173,6 +173,12 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, desc = 'Move to right p
 
 -- Open/Close LSP Diagnostics with trouble plugin
 vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, desc = 'Toggle trouble' })
+vim.keymap.set('n', '<leader>tt', '<cmd> Trouble diagnostics toggle filter.buf=0 <CR>', { noremap = true, desc = 'Toggle trouble diagnostics' })
+vim.keymap.set('n', '<leader>tT', '<cmd> Trouble diagnostics toggle <CR>', { noremap = true, desc = 'Toggle trouble diagnostics (Global)' })
+vim.keymap.set('n', '<leader>tl', '<cmd> Trouble lsp toggle focus=false win.position=right <CR>', { noremap = true, desc = 'Toggle trouble LSP' })
+vim.keymap.set('n', '<leader>ts', '<cmd> Trouble symbols toggle focus=false <CR>', { noremap = true, desc = 'Toggle trouble symbols' })
+vim.keymap.set('n', '<leader>tc', '<cmd> Trouble loclist toggle <CR>', { noremap = true, desc = 'Toggle trouble loclist' })
+vim.keymap.set('n', '<leader>tq', '<cmd> Trouble qflist toggle <CR>', { noremap = true, desc = 'Toggle trouble qflist' })
 
 -- Accept the current suggestion
 -- vim.keymap.set('i', '<C-a>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
