@@ -65,6 +65,7 @@ return {
       emmet_language_server = {},
       csharp_ls = {},
       eslint_d = {},
+      taplo = {},
       dockerls = {
         autostart = false,
       },

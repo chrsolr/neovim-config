@@ -1,5 +1,5 @@
 local options = {
-  notify_on_error = true,
+  notify_on_error = false,
   formatters_by_ft = {
     javascript = { { 'prettierd' } },
     typescript = { { 'prettierd' } },
@@ -12,7 +12,7 @@ local options = {
     yaml = { { 'prettierd' } },
     markdown = { { 'prettierd' } },
     lua = { { 'stylua' } },
-    toml = { 'taplo' },
+    -- toml = { 'taplo' },
     cs = { 'csharpier' },
     sql = { 'sql_formatter' },
   },
