@@ -12,7 +12,7 @@ local options = {
     yaml = { { 'prettierd' } },
     markdown = { { 'prettierd' } },
     lua = { { 'stylua' } },
-    -- toml = { 'taplo' },
+    toml = { { 'taplo' } },
     cs = { 'csharpier' },
     sql = { 'sql_formatter' },
   },

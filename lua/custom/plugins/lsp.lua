@@ -41,12 +41,13 @@ return {
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentFormattingProvider then
-          local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = true })
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            buffer = event.buf,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.document_highlight,
-          })
+          local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
+
+          -- vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+          --   buffer = event.buf,
+          --   group = highlight_augroup,
+          --   callback = vim.lsp.buf.document_highlight,
+          -- })
 
           vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
             buffer = event.buf,
@@ -82,6 +83,7 @@ return {
       emmet_language_server = {},
       csharp_ls = {},
       eslint_d = {},
+      taplo = {},
       dockerls = {
         autostart = false,
       },
