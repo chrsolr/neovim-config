@@ -13,7 +13,7 @@ local tokyonight = {
       transparent = false,
     }
     vim.cmd.colorscheme 'tokyonight'
-    vim.cmd.hi 'Comment qui=none'
+    -- vim.cmd.hi 'Comment qui=none'
   end,
 }
 
@@ -121,4 +121,5 @@ local serika_dark = {
 }
 
 -- return serika_dark
-return rose_pine
+-- return rose_pine
+return tokyonight
