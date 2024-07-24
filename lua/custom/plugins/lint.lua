@@ -13,6 +13,10 @@ return {
       typescript = { 'biomejs', 'eslint_d' },
       javascriptreact = { 'biomejs', 'eslint_d' },
       typescriptreact = { 'biomejs', 'eslint_d' },
+      -- javascript = { 'eslint_d' },
+      -- typescript = { 'eslint_d' },
+      -- javascriptreact = { 'eslint_d' },
+      -- typescriptreact = { 'eslint_d' },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', {

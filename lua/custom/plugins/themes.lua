@@ -122,4 +122,5 @@ local serika_dark = {
 
 -- return serika_dark
 -- return rose_pine
-return tokyonight
+-- return tokyonight
+return catppuccin
