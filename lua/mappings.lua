@@ -16,3 +16,7 @@ map("n", "<leader>gg", "<cmd> LazyGit <cr>", { desc = "Open Lazy Git" })
 
 -- Close current pane
 map("n", "<C-q>", "<C-w>q", { noremap = true, desc = "Close pane" })
+
+-- LSP Keymaps
+map("n", "<leader>..", vim.lsp.buf.code_action, { desc = "Code Actions" })
+map("n", "<leader>.rr", vim.lsp.buf.rename, { desc = "Code Rename" })
