@@ -15,14 +15,14 @@ end
 
 -- Build a list of lsp servers to install minus the ignored list.
 local all_servers = {
-  "tsserver",
-  "cssls",
-  "html",
-  "tailwindcss",
-  "emmet_language_server",
-  "csharp_ls",
   "lua_ls",
-  "yamlls",
+  "tsserver",
+  -- "cssls",
+  -- "html",
+  -- "tailwindcss",
+  -- "emmet_language_server",
+  -- "csharp_ls",
+  -- "yamlls",
 }
 
 for _, s in ipairs(lspconfig.servers) do
@@ -33,5 +33,5 @@ end
 
 require("mason-lspconfig").setup({
   ensure_installed = all_servers,
-  automatic_installation = false,
+  automatic_installation = true,
 })

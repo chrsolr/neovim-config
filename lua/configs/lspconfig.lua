@@ -1,31 +1,46 @@
-require("nvchad.configs.lspconfig").defaults()
+local configs = require("nvchad.configs.lspconfig")
+
+local on_attach = configs.on_attach
+local on_init = configs.on_init
+local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
 
+-- local default_servers = {
+--   "lua_ls",
+--   "tsserver",
+--   -- "cssls",
+--   -- "html",
+--   -- "tailwindcss",
+--   -- "emmet_language_server",
+--   -- "csharp_ls",
+--   -- "yamlls",
+-- }
+
 local servers = {
   "tsserver",
-  "cssls",
-  "html",
-  "tailwindcss",
-  "emmet_language_server",
-  "csharp_ls",
   "lua_ls",
-  "yamlls",
+  "html",
+  "cssls",
+  "clangd",
 }
-
-local nvlsp = require("nvchad.configs.lspconfig")
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
+    on_init = on_init,
+    on_attach = on_attach,
+    capabilities = capabilities,
   })
 end
 
--- configuring single server, example: typescript
--- lspconfig.tsserver.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
+-- Without the loop, you would have to manually set up each LSP
+--
+-- lspconfig.html.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- }
+--
+-- lspconfig.cssls.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
 -- }

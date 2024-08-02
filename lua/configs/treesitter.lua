@@ -12,8 +12,6 @@ local options = {
     "yaml",
     "toml",
     "vimdoc",
-    "printf",
-    "luadoc",
     "markdown",
     "typescript",
     "javascript",
@@ -21,3 +19,4 @@ local options = {
 }
 
 require("nvim-treesitter.configs").setup(options)
+-- return options
