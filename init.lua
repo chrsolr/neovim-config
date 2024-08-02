@@ -11,6 +11,17 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight on yank",
+	group = vim.api.nvim_create_augroup("TextkHighlight", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	pattern = "*",
+})
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins
