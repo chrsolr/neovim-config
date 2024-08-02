@@ -8,13 +8,16 @@ local options = {
   },
 
   formatters_by_ft = {
-    html = { "prettierd", stop_after_first = true },
-    css = { "prettierd", stop_after_first = true },
-    lua = { "stylua", stop_after_first = true },
+    javascript = { "prettierd" },
+    typescript = { "prettierd" },
+    javascriptreact = { "prettierd" },
+    typescriptreact = { "prettierd" },
+    lua = { "stylua" },
+    -- html = { "prettierd" },
+    -- css = { "prettierd" },
     toml = { "taplo" },
     cs = { "csharpier" },
     sql = { "sql_formatter" },
-    ["_"] = { "trim_whitespace" },
   },
 
   formatters = {
