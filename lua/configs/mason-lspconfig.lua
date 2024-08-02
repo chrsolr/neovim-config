@@ -21,7 +21,6 @@ local all_servers = {
   "tailwindcss",
   "emmet_language_server",
   "csharp_ls",
-  "dockerls",
   "lua_ls",
   "yamlls",
 }
