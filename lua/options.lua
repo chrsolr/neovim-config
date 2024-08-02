@@ -75,7 +75,7 @@ opt.termguicolors = true
 -- Set end of buffer to empty
 opt.fillchars = "eob: "
 
---
+-- Fold Level
 opt.foldlevelstart = 0
 
 -- Copilot
@@ -86,4 +86,4 @@ opt.foldlevelstart = 0
 -- Codeium
 -- g.codeium_no_tab_map = 1
 -- g.codeium_disable_bindings = 0
-g.codeium_enabled = false
+-- g.codeium_enabled = false
