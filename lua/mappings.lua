@@ -1,4 +1,4 @@
-require "nvchad.mappings"
+require("nvchad.mappings")
 
 local map = vim.keymap.set
 
@@ -13,3 +13,6 @@ map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save buffer" })
 
 -- Lazygit
 map("n", "<leader>gg", "<cmd> LazyGit <cr>", { desc = "Open Lazy Git" })
+
+-- Close current pane
+map("n", "<C-q>", "<C-w>q", { noremap = true, desc = "Close pane" })
