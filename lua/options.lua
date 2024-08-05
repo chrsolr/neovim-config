@@ -1,7 +1,6 @@
-require "nvchad.options"
+require("nvchad.options")
 
 local opt = vim.opt
-local g = vim.g
 
 -- Make line numbers default
 opt.relativenumber = true
