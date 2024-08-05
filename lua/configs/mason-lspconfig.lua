@@ -17,12 +17,14 @@ end
 local all_servers = {
   "lua_ls",
   "tsserver",
-  -- "cssls",
-  -- "html",
-  -- "tailwindcss",
-  -- "emmet_language_server",
-  -- "csharp_ls",
-  -- "yamlls",
+  "cssls",
+  "html",
+  "tailwindcss",
+  "emmet_language_server",
+  "csharp_ls",
+  "yamlls",
+  "lua_ls",
+  "tsserver",
 }
 
 for _, s in ipairs(lspconfig.servers) do

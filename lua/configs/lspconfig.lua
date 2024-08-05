@@ -5,24 +5,16 @@ local on_init = configs.on_init
 local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
-
--- local default_servers = {
---   "lua_ls",
---   "tsserver",
---   -- "cssls",
---   -- "html",
---   -- "tailwindcss",
---   -- "emmet_language_server",
---   -- "csharp_ls",
---   -- "yamlls",
--- }
-
 local servers = {
   "tsserver",
-  "lua_ls",
-  "html",
   "cssls",
-  "clangd",
+  "html",
+  "tailwindcss",
+  "emmet_language_server",
+  "csharp_ls",
+  "dockerls",
+  "lua_ls",
+  "yamlls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -32,15 +24,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   })
 end
-
--- Without the loop, you would have to manually set up each LSP
---
--- lspconfig.html.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
---
--- lspconfig.cssls.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
