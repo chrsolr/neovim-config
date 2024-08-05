@@ -49,6 +49,38 @@ map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, desc = "Move line up" })
 map("n", "<leader>v", "<cmd> vsp <CR>", { noremap = true, desc = "Split Vertical" })
 map("n", "<leader>s", "<cmd> sp <CR>", { noremap = true, desc = "Split Horizontal" })
 
+-- Open terminal in a new buffer
+map("n", "<leader>tm", "<cmd> term <CR> i", { noremap = true, desc = "Open terminal in a new buffer" })
+map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- Open/Close LSP Diagnostics with trouble plugin
+map(
+  "n",
+  "<leader>tt",
+  "<cmd> Trouble diagnostics toggle filter.buf=0 <CR>",
+  { noremap = true, desc = "Toggle trouble diagnostics" }
+)
+map(
+  "n",
+  "<leader>tT",
+  "<cmd> Trouble diagnostics toggle <CR>",
+  { noremap = true, desc = "Toggle trouble diagnostics (Global)" }
+)
+map(
+  "n",
+  "<leader>tl",
+  "<cmd> Trouble lsp toggle focus=false win.position=right <CR>",
+  { noremap = true, desc = "Toggle trouble LSP" }
+)
+map(
+  "n",
+  "<leader>ts",
+  "<cmd> Trouble symbols toggle focus=false <CR>",
+  { noremap = true, desc = "Toggle trouble symbols" }
+)
+map("n", "<leader>tc", "<cmd> Trouble loclist toggle <CR>", { noremap = true, desc = "Toggle trouble loclist" })
+map("n", "<leader>tq", "<cmd> Trouble qflist toggle <CR>", { noremap = true, desc = "Toggle trouble qflist" })
+
 -- [[ Telescope Builtins ]]
 local telescope_builtin = require("telescope.builtin")
 
