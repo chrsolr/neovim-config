@@ -94,3 +94,25 @@ map("n", "<leader>fw", telescope_builtin.grep_string, { desc = "Search Current W
 map("n", "<leader>fd", telescope_builtin.diagnostics, { desc = "Search Diagnostics" })
 map("n", "<leader>fk", telescope_builtin.keymaps, { desc = "Search Keymaps" })
 map("n", "<leader>ft", telescope_builtin.builtin, { desc = "Search Select Telescope" })
+
+-- Copilot Chat Toggle
+map(
+  { "n", "v" },
+  "<leader>cc",
+  "<cmd> CopilotChatToggle <CR>",
+  { silent = true, replace_keycodes = false, desc = "Copilot Chat Toggle" }
+)
+
+map({ "n", "v" }, "<leader>fc", function()
+  local actions = require("CopilotChat.actions")
+  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+end, { desc = "Copilot Chat Actions" })
+
+-- -- Move to next suggestion
+-- map('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
+--
+-- -- Move to previous suggestion
+-- map('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
+--
+-- Do nothing when space is pressed in normal and visual mode
+-- map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
