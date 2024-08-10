@@ -13,6 +13,7 @@ local options = {
     typescriptreact = { "prettierd" },
     json = { "prettierd" },
     html = { "prettierd" },
+    yaml = { "prettierd" },
     css = { "prettierd" },
     lua = { "stylua" },
     toml = { "taplo" },
