@@ -7,10 +7,10 @@ local options = {
   },
 
   formatters_by_ft = {
-    javascript = { "prettierd" },
-    typescript = { "prettierd" },
-    javascriptreact = { "prettierd" },
-    typescriptreact = { "prettierd" },
+    javascript = { "biome", "prettierd", stop_after_first = true },
+    typescript = { "biome", "prettierd", stop_after_first = true },
+    javascriptreact = { "biome", "prettierd", stop_after_first = true },
+    typescriptreact = { "biome", "prettierd", stop_after_first = true },
     json = { "prettierd" },
     html = { "prettierd" },
     yaml = { "prettierd" },
