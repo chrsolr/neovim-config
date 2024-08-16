@@ -15,7 +15,7 @@ end
 
 -- Build a list of linters to install minus the ignored list.
 -- local all_linters = { "eslint_d" }
-local all_linters = {}
+local all_linters = { "eslint_d" }
 
 for _, v in pairs(lint.linters_by_ft) do
   for _, linter in ipairs(v) do
@@ -28,5 +28,4 @@ end
 require("mason-nvim-lint").setup({
   ensure_installed = all_linters,
   automatic_installation = false,
-  quiet_mode = false,
 })
