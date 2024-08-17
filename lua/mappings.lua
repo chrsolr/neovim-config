@@ -2,6 +2,12 @@ require("nvchad.mappings")
 
 local map = vim.keymap.set
 
+-- Better copy and paste in visual mode
+map("v", "p", '"_dP', { noremap = true })
+
+-- Don't yank newline when using $
+map("v", "$", "g_", { noremap = true })
+
 -- Escape insert mode with jk
 map("i", "jk", "<ESC>")
 
