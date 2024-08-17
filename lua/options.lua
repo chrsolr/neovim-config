@@ -79,7 +79,7 @@ opt.fillchars = "eob: "
 opt.foldlevelstart = 0
 
 -- Copilot
-g.copilot_enabled = 0
+g.copilot_enabled = 1
 -- g.copilot_no_tab_map = true
 -- g.copilot_assume_mapped = true
 -- g.copilot_tab_fallback = ''
