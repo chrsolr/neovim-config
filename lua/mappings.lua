@@ -3,10 +3,16 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 
 -- Better copy and paste in visual mode
-map({ "v", "n" }, "p", '"_dP', { noremap = true, silent = true })
+map("v", "p", '"_dP', { noremap = true, silent = true })
 
 -- Don't yank newline when using $
 map("v", "$", "g_", { noremap = true })
+
+-- Show Signature Help
+map("n", "<leader>.sh", vim.lsp.buf.signature_help, { noremap = true, desc = "LSP: Signature Help" })
+
+-- Show diagnostics (errors and warnings)
+map("n", "<leader>.e", vim.diagnostic.open_float, { desc = "LSP: Floating Diagnostic" })
 
 -- Show a list of diagnostics
 map("n", "<leader>.q", vim.diagnostic.setloclist, { desc = "LSP: Quickfix list" })
