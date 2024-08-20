@@ -3,7 +3,8 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 
 -- Better copy and paste in visual mode
-map("v", "p", '"_dP', { noremap = true })
+map("v", "p", '"_dP', { noremap = true, silent = true })
+map("n", "p", '"_dP', { noremap = true, silent = true })
 
 -- Don't yank newline when using $
 map("v", "$", "g_", { noremap = true })
