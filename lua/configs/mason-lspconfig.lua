@@ -1,7 +1,7 @@
 local lspconfig = package.loaded["lspconfig"]
 
 local all_servers = {
-  "tsserver",
+  "ts_ls",
   "cssls",
   "html",
   "tailwindcss",
