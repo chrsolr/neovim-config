@@ -6,7 +6,7 @@ local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
 local servers = {
-  "tsserver",
+  "ts_ls",
   "cssls",
   "html",
   "tailwindcss",
