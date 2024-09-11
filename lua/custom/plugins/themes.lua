@@ -72,9 +72,9 @@ local catppuccin = {
   config = function()
     require('catppuccin').setup {
       -- flavour = 'latte',
-      -- flavour = 'frappe',
+      flavour = 'frappe',
       -- flavour = 'macchiato',
-      flavour = 'mocha',
+      -- flavour = 'mocha',
     }
     vim.cmd.colorscheme 'catppuccin'
     vim.cmd.hi 'Comment gui=none'

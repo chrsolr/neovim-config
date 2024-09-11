@@ -10,22 +10,22 @@ local options = {
       lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
     }
   end,
+
   formatters_by_ft = {
-    javascript = { 'prettierd', 'biome', stop_after_first = true },
-    typescript = { 'prettierd', 'biome', stop_after_first = true },
-    javascriptreact = { 'prettierd', 'biome', stop_after_first = true },
-    typescriptreact = { 'prettierd', 'biome', stop_after_first = true },
-    css = { 'prettierd', 'biome', stop_after_first = true },
-    tailwindcss = { 'prettierd', 'biome', stop_after_first = true },
-    html = { 'prettierd', 'biome', stop_after_first = true },
-    json = { 'prettierd', 'biome', stop_after_first = true },
-    yaml = { 'prettierd', 'biome', stop_after_first = true },
-    markdown = { 'prettierd', 'biome', stop_after_first = true },
+    javascript = { 'prettier', 'prettierd', stop_after_first = true },
+    typescript = { 'prettier', 'prettierd', stop_after_first = true },
+    javascriptreact = { 'prettier', 'prettierd', stop_after_first = true },
+    typescriptreact = { 'prettier', 'prettierd', stop_after_first = true },
+    json = { 'prettier', 'prettierd', stop_after_first = true },
+    html = { 'prettier', 'prettierd', stop_after_first = true },
+    yaml = { 'prettier', 'prettierd', stop_after_first = true },
+    css = { 'prettierd', 'prettierd', stop_after_first = true },
     lua = { 'stylua' },
     toml = { 'taplo' },
     cs = { 'csharpier' },
     sql = { 'sql_formatter' },
   },
+
   formatters = {
     sql_formatter = {
       command = 'sql-formatter',

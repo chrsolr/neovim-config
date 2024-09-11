@@ -78,7 +78,7 @@ return {
     local servers = {
       html = {},
       cssls = {},
-      tsserver = {},
+      ts_ls = {},
       tailwindcss = {},
       emmet_language_server = {},
       csharp_ls = {},
