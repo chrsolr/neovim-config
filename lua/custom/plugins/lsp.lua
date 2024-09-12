@@ -18,6 +18,11 @@ return {
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
       callback = function(event)
+        local function lsp_organize_imports()
+          local params = { command = '_typescript.organizeImports', arguments = { vim.api.nvim_buf_get_name(0) }, title = '' }
+          vim.lsp.buf.execute_command(params)
+        end
+
         local map = function(keys, func, desc)
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
@@ -28,7 +33,8 @@ return {
         map('gt', vim.lsp.buf.type_definition, 'Type Definition')
         map('gD', vim.lsp.buf.declaration, 'Go to Declaration')
         map('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
-        map('<leader>rn', vim.lsp.buf.rename, 'Code Rename')
+        map('<leader>.rr', vim.lsp.buf.rename, 'Code Rename')
+        map('<leader>.go', lsp_organize_imports, 'Organize Imports')
 
         -- [[ LSP Unmapped ]]
         -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
