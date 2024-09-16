@@ -31,6 +31,10 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, desc = 'Move line
 -- Move higlighted line up one line
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, desc = 'Move line up' })
 
+-- Cycle tabs
+vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { noremap = true, desc = 'Prev Buffer' })
+vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { noremap = true, desc = 'Next Buffer' })
+
 -- [[ Telescope Builtins ]]
 local telescope_builtin = require 'telescope.builtin'
 
