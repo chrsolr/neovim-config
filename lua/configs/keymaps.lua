@@ -48,6 +48,45 @@ vim.keymap.set('n', '<leader>tm', '<cmd> term <CR> i', { noremap = true, desc = 
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>.
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- Split window vertically
+vim.keymap.set('n', '<leader>v', '<cmd> vsp <CR>', { noremap = true, desc = 'Split Vertical' })
+
+-- Split window horizontally
+vim.keymap.set('n', '<leader>s', '<cmd> sp <CR>', { noremap = true, desc = 'Split Horizontal' })
+
+-- Close buffer
+vim.keymap.set('n', '<leader>x', '<cmd> BufDel <CR>', { noremap = true, desc = 'Close Buffer' })
+
+-- Close other buffers
+vim.keymap.set('n', '<leader>X', '<cmd> BufDelOthers <CR>', { noremap = true, desc = 'Close Other Buffer' })
+
+-- Close current pane
+vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, desc = 'Close pane' })
+
+-- Move to left pane
+vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, desc = 'Move to left pane' })
+
+-- Move to below pane
+vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, desc = 'Move to below pane' })
+
+-- Move to top pane
+vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, desc = 'Move to top pane' })
+
+-- Move to right pane
+vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, desc = 'Move to right pane' })
+
+-- Do nothing when space is pressed in normal and visual mode
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- Move line up with wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
+-- Move line down with wrap
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+--
+vim.keymap.set({ 'n', 'v' }, '<leader>/', 'gcc', { noremap = true, silent = true })
+
 -- [[ Telescope Builtins ]]
 local telescope_builtin = require 'telescope.builtin'
 
