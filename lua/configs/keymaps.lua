@@ -84,8 +84,14 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 -- Move line down with wrap
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
---
-vim.keymap.set({ 'n', 'v' }, '<leader>/', 'gcc', { noremap = true, silent = true })
+-- Open/Close LSP Diagnostics with trouble plugin
+vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, desc = 'Toggle trouble', silent = true })
+vim.keymap.set('n', '<leader>tt', '<cmd> Trouble diagnostics toggle filter.buf=0 <CR>', { noremap = true, desc = 'Toggle trouble diagnostics' })
+vim.keymap.set('n', '<leader>tT', '<cmd> Trouble diagnostics toggle <CR>', { noremap = true, desc = 'Toggle trouble diagnostics (Global)' })
+vim.keymap.set('n', '<leader>tl', '<cmd> Trouble lsp toggle focus=false win.position=right <CR>', { noremap = true, desc = 'Toggle trouble LSP' })
+vim.keymap.set('n', '<leader>ts', '<cmd> Trouble symbols toggle focus=false <CR>', { noremap = true, desc = 'Toggle trouble symbols' })
+vim.keymap.set('n', '<leader>tc', '<cmd> Trouble loclist toggle <CR>', { noremap = true, desc = 'Toggle trouble loclist' })
+vim.keymap.set('n', '<leader>tq', '<cmd> Trouble qflist toggle <CR>', { noremap = true, desc = 'Toggle trouble qflist' })
 
 -- [[ Telescope Builtins ]]
 local telescope_builtin = require 'telescope.builtin'
