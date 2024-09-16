@@ -32,6 +32,11 @@ return {
             ['<C-x>'] = require('telescope.actions').delete_buffer,
           },
         },
+        pickers = {
+          oldfiles = {
+            cwd_only = true,
+          },
+        },
       },
       extensions = {
         ['ui-select'] = {
