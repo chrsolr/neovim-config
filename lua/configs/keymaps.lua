@@ -85,8 +85,8 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Open/Close LSP Diagnostics with trouble plugin
-vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, desc = 'Toggle trouble', silent = true })
-vim.keymap.set('n', '<leader>tt', '<cmd> Trouble diagnostics toggle filter.buf=0 <CR>', { noremap = true, desc = 'Toggle trouble diagnostics' })
+-- vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, desc = 'Toggle trouble', silent = true })
+vim.keymap.set('n', '<leader>tt', '<cmd> Trouble diagnostics toggle focus=true filter.buf=0 <CR>', { noremap = true, desc = 'Toggle trouble diagnostics' })
 vim.keymap.set('n', '<leader>tT', '<cmd> Trouble diagnostics toggle <CR>', { noremap = true, desc = 'Toggle trouble diagnostics (Global)' })
 vim.keymap.set('n', '<leader>tl', '<cmd> Trouble lsp toggle focus=false win.position=right <CR>', { noremap = true, desc = 'Toggle trouble LSP' })
 vim.keymap.set('n', '<leader>ts', '<cmd> Trouble symbols toggle focus=false <CR>', { noremap = true, desc = 'Toggle trouble symbols' })
