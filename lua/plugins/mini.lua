@@ -17,6 +17,7 @@ return { -- Collection of various small independent plugins/modules
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require('mini.surround').setup()
 
+    -- Comment Lines
     require('mini.comment').setup {
       mappings = {
         comment = '<leader>/',
@@ -24,6 +25,8 @@ return { -- Collection of various small independent plugins/modules
         comment_line = '<leader>/',
       },
     }
+
+    require('mini.pairs').setup()
 
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
