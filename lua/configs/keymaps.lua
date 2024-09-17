@@ -125,3 +125,13 @@ vim.keymap.set('n', '<leader>f.', function()
     prompt_title = 'Live Grep in Open Files',
   }
 end, { desc = 'Find in Neovim Files' })
+
+-- Format current buffer with Conform or LSP
+vim.keymap.set({ 'n', 'v' }, '<leader>fm', function(_)
+  local conform = require 'conform'
+  conform.format {
+    async = true,
+    lsp_fallback = true,
+    timeout_ms = 500,
+  }
+end, { desc = 'Format current buffer with Conform or LSP' })
