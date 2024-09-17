@@ -133,5 +133,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>fm', function(_)
     async = true,
     lsp_fallback = true,
     timeout_ms = 500,
+    stop_after_first = true,
   }
 end, { desc = 'Format current buffer with Conform or LSP' })
