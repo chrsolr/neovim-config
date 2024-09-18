@@ -31,8 +31,12 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, desc = 'Move line
 -- Move higlighted line up one line
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, desc = 'Move line up' })
 
--- Cycle tabs
+-- Move to previous buffer
+vim.keymap.set('n', '<S-tab>', '<cmd>BufferLineCyclePrev<cr>', { noremap = true, desc = 'Previous buffer' })
 vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { noremap = true, desc = 'Prev Buffer' })
+
+-- Move to next buffer
+vim.keymap.set('n', '<tab>', '<cmd>BufferLineCycleNext<cr>', { noremap = true, desc = 'Next buffer' })
 vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { noremap = true, desc = 'Next Buffer' })
 
 -- Toggle NvimTree
@@ -83,6 +87,15 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 
 -- Move line down with wrap
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Copilot Chat Toggle
+vim.keymap.set({ 'n', 'v' }, '<leader>cc', '<cmd> CopilotChatToggle <CR>', { silent = true, replace_keycodes = false, desc = 'Copilot Chat Toggle' })
+
+-- Copilot Chat Actions
+vim.keymap.set({ 'n', 'v' }, '<leader>fc', function()
+  local actions = require 'CopilotChat.actions'
+  require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
+end, { desc = 'Copilot Chat Actions' })
 
 -- Open/Close LSP Diagnostics with trouble plugin
 -- vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, desc = 'Toggle trouble', silent = true })
