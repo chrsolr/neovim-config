@@ -65,6 +65,7 @@ local servers = {
   csharp_ls = {},
   eslint_d = {},
   taplo = {},
+  helm_ls = {},
   dockerls = {
     autostart = false,
   },
