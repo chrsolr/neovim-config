@@ -88,6 +88,10 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 -- Move line down with wrap
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Copilot Enable
+vim.keymap.set({ 'n' }, '<leader>ce', '<cmd> Copilot enable <CR>', { silent = true, desc = 'Copilot Enable' })
+vim.keymap.set({ 'n' }, '<leader>cd', '<cmd> Copilot disable <CR>', { silent = true, desc = 'Copilot Disable' })
+
 -- Copilot Chat Toggle
 vim.keymap.set({ 'n', 'v' }, '<leader>cc', '<cmd> CopilotChatToggle <CR>', { silent = true, replace_keycodes = false, desc = 'Copilot Chat Toggle' })
 
@@ -98,7 +102,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>fc', function()
 end, { desc = 'Copilot Chat Actions' })
 
 -- Open/Close LSP Diagnostics with trouble plugin
--- vim.keymap.set('n', '<leader>tt', '<cmd> TroubleToggle <CR>', { noremap = true, desc = 'Toggle trouble', silent = true })
 vim.keymap.set('n', '<leader>tt', '<cmd> Trouble diagnostics toggle focus=true filter.buf=0 <CR>', { noremap = true, desc = 'Toggle trouble diagnostics' })
 vim.keymap.set('n', '<leader>tT', '<cmd> Trouble diagnostics toggle <CR>', { noremap = true, desc = 'Toggle trouble diagnostics (Global)' })
 vim.keymap.set('n', '<leader>tl', '<cmd> Trouble lsp toggle focus=false win.position=right <CR>', { noremap = true, desc = 'Toggle trouble LSP' })
