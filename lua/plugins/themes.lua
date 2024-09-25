@@ -112,8 +112,8 @@ local rose_pine = {
 }
 
 local serika_dark = {
-  -- 'chrsolr/serika-dark.nvim',
-  dir = '~/.dev/.chrsolr/serika-dark.nvim',
+  'chrsolr/serika-dark.nvim',
+  -- dir = '~/.dev/.chrsolr/serika-dark.nvim',
   lazy = false,
   config = function()
     vim.cmd 'colorscheme serika'
