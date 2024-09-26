@@ -111,6 +111,15 @@ local rose_pine = {
   end,
 }
 
+local oldworld = {
+  'dgox16/oldworld.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd.colorscheme 'oldworld'
+  end,
+}
+
 local serika_dark = {
   'chrsolr/serika-dark.nvim',
   -- dir = '~/.dev/.chrsolr/serika-dark.nvim',
@@ -120,7 +129,18 @@ local serika_dark = {
   end,
 }
 
+local serika = {
+  -- 'chrsolr/serika-dark.nvim',
+  dir = '~/.dev/.chrsolr/serika.nvim',
+  lazy = false,
+  config = function()
+    vim.cmd 'colorscheme serika'
+  end,
+}
+
 -- return serika_dark
-return rose_pine
+-- return serika
+-- return rose_pine
 -- return tokyonight
 -- return catppuccin
+return oldworld
