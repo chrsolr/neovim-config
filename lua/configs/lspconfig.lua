@@ -1,10 +1,10 @@
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
   callback = function(event)
-    local function lsp_organize_imports()
-      local params = { command = '_typescript.organizeImports', arguments = { vim.api.nvim_buf_get_name(0) }, title = '' }
-      vim.lsp.buf.execute_command(params)
-    end
+    -- local function lsp_organize_imports()
+    --   local params = { command = '_typescript.organizeImports', arguments = { vim.api.nvim_buf_get_name(0) }, title = '' }
+    --   vim.lsp.buf.execute_command(params)
+    -- end
 
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('gD', vim.lsp.buf.declaration, 'Go to Declaration')
     map('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
     map('<leader>.rr', vim.lsp.buf.rename, 'Code Rename')
-    map('<leader>.ro', lsp_organize_imports, 'Organize TS Imports')
+    -- map('<leader>.ro', lsp_organize_imports, 'Organize TS Imports')
 
     if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
       map('<leader>.ti', function()
@@ -89,6 +89,7 @@ vim.list_extend(ensure_installed, {
 require('mason-tool-installer').setup {
   ensure_installed = ensure_installed,
 }
+
 require('mason-lspconfig').setup {
   handlers = {
     function(server_name)

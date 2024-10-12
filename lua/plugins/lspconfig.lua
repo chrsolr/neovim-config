@@ -10,11 +10,11 @@ return {
     {
       'j-hui/fidget.nvim',
       opts = {},
-    },      
-		'hrsh7th/cmp-nvim-lsp',
+    },
+    'hrsh7th/cmp-nvim-lsp',
     'folke/neodev.nvim',
   },
-	config = function()
-		require("configs.lspconfig")
-	end,
+  config = function()
+    require 'configs.lspconfig'
+  end,
 }
