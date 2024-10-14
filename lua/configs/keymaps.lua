@@ -10,6 +10,18 @@ vim.keymap.set('v', '$', 'g_', { noremap = true })
 -- Escape insert mode with jk
 vim.keymap.set('i', 'jk', '<ESC>', { noremap = true })
 
+-- Show Signature Help
+vim.keymap.set('n', '<leader>.sh', vim.lsp.buf.signature_help, { noremap = true, desc = 'LSP: Signature Help' })
+
+-- Show diagnostics (errors and warnings)
+vim.keymap.set('n', '<leader>.e', vim.diagnostic.open_float, { desc = 'LSP: Floating Diagnostic' })
+
+-- Show a list of diagnostics
+vim.keymap.set('n', '<leader>.q', vim.diagnostic.setloclist, { desc = 'LSP: Quickfix list' })
+
+-- Displays hover information about the symbol under the cursor in a floating
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, desc = 'LSP: Hover' })
+
 -- Save current buffer
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-s>', '<ESC><cmd> w <CR>', { noremap = true, desc = 'Save Files' })
 

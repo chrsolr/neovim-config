@@ -1,6 +1,6 @@
 return {
   'CopilotC-Nvim/CopilotChat.nvim',
-  enabled = true,
+  enabled = false,
   branch = 'canary',
   lazy = false,
   dependencies = {

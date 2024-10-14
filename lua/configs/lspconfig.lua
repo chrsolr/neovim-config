@@ -1,10 +1,10 @@
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
   callback = function(event)
-    -- local function lsp_organize_imports()
-    --   local params = { command = '_typescript.organizeImports', arguments = { vim.api.nvim_buf_get_name(0) }, title = '' }
-    --   vim.lsp.buf.execute_command(params)
-    -- end
+    local function lsp_organize_imports()
+      local params = { command = '_typescript.organizeImports', arguments = { vim.api.nvim_buf_get_name(0) }, title = '' }
+      vim.lsp.buf.execute_command(params)
+    end
 
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
@@ -19,13 +19,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('gD', vim.lsp.buf.declaration, 'Go to Declaration')
     map('<leader>..', vim.lsp.buf.code_action, 'Code Actions')
     map('<leader>.rr', vim.lsp.buf.rename, 'Code Rename')
-    -- map('<leader>.ro', lsp_organize_imports, 'Organize TS Imports')
-
-    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-      map('<leader>.ti', function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-      end, 'Toggle Inlay Hints')
-    end
+    map('<leader>.ro', lsp_organize_imports, 'Organize TS Imports')
 
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
@@ -49,6 +43,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
           vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
         end,
       })
+    end
+
+    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+      map('<leader>.ti', function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+      end, 'Toggle Inlay Hints')
     end
   end,
 })
