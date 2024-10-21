@@ -71,8 +71,8 @@ local catppuccin = {
   priority = 1000,
   config = function()
     require('catppuccin').setup {
-      -- flavour = 'latte',
-      flavour = 'frappe',
+      flavour = 'latte',
+      -- flavour = 'frappe',
       -- flavour = 'macchiato',
       -- flavour = 'mocha',
     }
@@ -138,9 +138,23 @@ local serika = {
   end,
 }
 
+local gruvbox = {
+  'ellisonleao/gruvbox.nvim',
+  priority = 1000,
+  config = function()
+    require('gruvbox').setup {
+      contract = 'hard',
+    }
+
+    vim.o.background = 'dark' -- "dark" or "light" for light mode
+    vim.cmd [[colorscheme gruvbox]]
+  end,
+}
+
 -- return serika_dark
 -- return serika
 -- return rose_pine
 -- return tokyonight
 -- return catppuccin
-return oldworld
+-- return oldworld
+return gruvbox
