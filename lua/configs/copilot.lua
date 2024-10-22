@@ -7,9 +7,10 @@ local options = {
     },
   },
   suggestion = {
+    enabled = true,
     auto_trigger = true,
     keymap = {
-      accept = '<C-a>',
+      accept = '<leader><Tab>',
     },
   },
 }
