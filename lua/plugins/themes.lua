@@ -151,10 +151,33 @@ local gruvbox = {
   end,
 }
 
+local oxorcabon = {
+  'nyoom-engineering/oxocarbon.nvim',
+  priority = 1000,
+  config = function()
+    -- require('oxocarbon').setup {}
+    vim.opt.background = 'dark' -- set this to dark or light
+    vim.cmd 'colorscheme oxocarbon'
+  end,
+}
+
+-- Lazy
+local monokai = {
+  'polirritmico/monokai-nightasty.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.opt.background = 'dark' -- set this to dark or light
+    require('monokai-nightasty').load()
+  end,
+}
+
 -- return serika_dark
 -- return serika
--- return rose_pine
+return rose_pine
 -- return tokyonight
 -- return catppuccin
 -- return oldworld
-return gruvbox
+-- return gruvbox
+-- return oxorcabon
+-- return monokai
