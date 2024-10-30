@@ -10,7 +10,7 @@ local options = {
     enabled = true,
     auto_trigger = true,
     keymap = {
-      accept = '<leader><Tab>',
+      accept = '<Tab>',
     },
   },
 }
