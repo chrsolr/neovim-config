@@ -7,10 +7,10 @@ local options = {
     },
   },
   suggestion = {
-    enabled = true,
+    enabled = false,
     auto_trigger = true,
     keymap = {
-      accept = '<Tab>',
+      accept = '<leader>ca',
     },
   },
 }
