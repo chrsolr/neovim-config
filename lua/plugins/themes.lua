@@ -174,9 +174,9 @@ local monokai = {
 
 -- return serika_dark
 -- return serika
--- return rose_pine
+return rose_pine
 -- return tokyonight
-return catppuccin
+-- return catppuccin
 -- return oldworld
 -- return gruvbox
 -- return oxorcabon
