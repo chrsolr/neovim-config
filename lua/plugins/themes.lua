@@ -71,10 +71,10 @@ local catppuccin = {
   priority = 1000,
   config = function()
     require('catppuccin').setup {
-      flavour = 'latte',
+      -- flavour = 'latte',
       -- flavour = 'frappe',
       -- flavour = 'macchiato',
-      -- flavour = 'mocha',
+      flavour = 'mocha',
     }
     vim.cmd.colorscheme 'catppuccin'
     vim.cmd.hi 'Comment gui=none'
@@ -174,9 +174,9 @@ local monokai = {
 
 -- return serika_dark
 -- return serika
-return rose_pine
+-- return rose_pine
 -- return tokyonight
--- return catppuccin
+return catppuccin
 -- return oldworld
 -- return gruvbox
 -- return oxorcabon
