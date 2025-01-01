@@ -69,6 +69,7 @@ local servers = {
   dockerls = {
     autostart = false,
   },
+  denols = {},
   lua_ls = {
     settings = {
       Lua = {
