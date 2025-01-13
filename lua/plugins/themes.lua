@@ -172,15 +172,12 @@ local monokai = {
   end,
 }
 
-local vesper = { 'datsfilipe/vesper.nvim', lazy = false, priority = 1000 }
-
 -- return serika_dark
 -- return serika
 -- return rose_pine
 -- return tokyonight
 -- return catppuccin
-return oldworld
+-- return oldworld
 -- return gruvbox
--- return oxorcabon
+return oxorcabon
 -- return monokai
--- return vesper
