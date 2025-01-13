@@ -1,7 +1,7 @@
 return {
   'supermaven-inc/supermaven-nvim',
-  enabled = false,
+  enabled = true,
   config = function()
-    require('supermaven-nvim').setup {}
+    require 'configs.supermaven'
   end,
 }
