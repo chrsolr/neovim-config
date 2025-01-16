@@ -1,13 +1,13 @@
 return {
   'yetone/avante.nvim',
-  enabled = false,
+  enabled = true,
   event = 'VeryLazy',
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
     -- add any opts here
-    provider = 'copilot', -- Recommend using Claude
-    auto_suggestions_provider = 'copilot',
+    provider = 'claude', -- Recommend using Claude
+    auto_suggestions_provider = 'claude',
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = 'make',
