@@ -21,7 +21,3 @@ git clone git@github.com:chrsolr/neovim-config.git ~/.config/nvim
 ```bash
 git clone git@github.com:chrsolr/neovim-config.git %userprofile%\AppData\Local\nvim\
 ```
-
-### Cheatsheet
-
-- View Keymap: `:verbose map KEYMAP`
