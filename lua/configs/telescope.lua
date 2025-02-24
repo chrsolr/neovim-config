@@ -15,13 +15,17 @@ require('telescope').setup {
         ['<C-x>'] = require('telescope.actions').delete_buffer,
       },
     },
-    pickers = {
-      oldfiles = {
-        cwd_only = true,
-      },
+  },
+  pickers = {
+    -- find_files = {
+    --   theme = 'ivy',
+    -- },
+    oldfiles = {
+      cwd_only = true,
     },
   },
   extensions = {
+    fzf = {},
     ['ui-select'] = {
       require('telescope.themes').get_dropdown(),
     },
