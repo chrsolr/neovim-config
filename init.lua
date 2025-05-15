@@ -24,6 +24,15 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight on yank",
+  group = vim.api.nvim_create_augroup("TextkHighlight", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  pattern = "*",
+})
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
