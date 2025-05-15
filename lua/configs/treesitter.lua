@@ -11,10 +11,12 @@ local options = {
     "html",
     "yaml",
     "toml",
+    "luadoc",
     "vimdoc",
     "markdown",
     "typescript",
     "javascript",
+    "markdown_inline",
   },
 }
 

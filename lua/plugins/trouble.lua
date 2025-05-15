@@ -1,6 +1,12 @@
 return {
   "folke/trouble.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  event = "VeryLazy",
-  opts = {},
+  enabled = true,
+  cmd = { "Trouble" },
+  opts = {
+    modes = {
+      lsp = {
+        win = { position = "right" },
+      },
+    },
+  },
 }
