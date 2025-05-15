@@ -1,7 +1,8 @@
 return {
   "stevearc/conform.nvim",
-  lazy = false,
-  event = "BufWritePre",
-  enabled = true,
+  event = {
+    "BufWritePre",
+  },
+  cmd = { "ConformInfo" },
   opts = require("configs.conform"),
 }
