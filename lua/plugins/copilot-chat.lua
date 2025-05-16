@@ -8,6 +8,7 @@ return {
     { "nvim-lua/plenary.nvim", branch = "master" },
   },
   opts = {
-    model = "claude-3.5-sonnet",
+    model = "gpt-4.1",
+    auto_insert_mode = true,
   },
 }
