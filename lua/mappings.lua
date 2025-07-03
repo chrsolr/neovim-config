@@ -21,7 +21,7 @@ map("n", "<leader>.q", vim.diagnostic.setloclist, { desc = "LSP: Quickfix list" 
 map("i", "jk", "<ESC>")
 
 -- CMD enter command mode
-map("n", ";", ":", { desc = "Enter command mode" })
+-- map("n", ";", ":", { desc = "Enter command mode" })
 
 -- Save all buffers
 map({ "n", "v", "i" }, "<C-s>", "<ESC><cmd> wa <CR>", { noremap = true, desc = "Save Files" })
@@ -131,3 +131,15 @@ end, { desc = "Copilot Chat Actions" })
 --
 -- Do nothing when space is pressed in normal and visual mode
 -- map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
+-- Save all buffers
+map({ "n", "v", "i" }, "<C-S>", "<ESC><cmd> wa <CR>", { noremap = true, desc = "Save Files" })
+
+-- Save all buffers with leader
+map("n", "<leader>ww", "<ESC><cmd> wa <CR>", { noremap = true, desc = "Save Files" })
+
+-- Resize windows
+map("n", "<M-4>", "<cmd>resize +5<CR>", { noremap = true, desc = "Increase window height" })
+map("n", "<M-3>", "<cmd>resize -2<CR>", { noremap = true, desc = "Decrease window height" })
+map("n", "<M-2>", "<cmd>vertical resize -2<CR>", { noremap = true, desc = "Decrease window width" })
+map("n", "<M-1>", "<cmd>vertical resize +2<CR>", { noremap = true, desc = "Increase window width" })
