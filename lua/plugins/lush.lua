@@ -1,6 +1,6 @@
 return {
   'oncomouse/lushwal.nvim',
-  enabled = false,
+  enabled = true,
   lazy = false,
   cmd = { 'LushwalCompile' },
   dependencies = {

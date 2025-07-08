@@ -172,11 +172,11 @@ local monokai = {
   end,
 }
 
--- return serika_dark
+return serika_dark
 -- return serika
 -- return rose_pine
 -- return tokyonight
-return catppuccin
+-- return catppuccin
 -- return oldworld
 -- return gruvbox
 -- return oxorcabon
