@@ -1,0 +1,192 @@
+-- -- ~/.config/nvim/lua/custom/colors/opencode_dark.lua
+--
+-- local theme = {}
+--
+-- local colors = {
+--   bg = "#0a0a0a", -- darkStep1
+--   bg_panel = "#141414", -- darkStep2
+--   bg_element = "#1e1e1e", -- darkStep3
+--   bg_subtle = "#3c3c3c", -- darkStep6
+--   fg = "#eeeeee", -- darkStep12
+--   fg_muted = "#808080", -- darkStep11
+--   selection_bg = "#3c3c3c",
+--   selection_fg = "#eeeeee",
+--   cursor = "#5c9cf5", -- darkSecondary
+--
+--   red = "#e06c75",
+--   green = "#7fd88f",
+--   yellow = "#e5c07b",
+--   blue = "#5c9cf5",
+--   magenta = "#9d7cd8",
+--   cyan = "#56b6c2",
+--   orange = "#f5a742",
+--
+--   bright_red = "#ffc09f",
+--   bright_green = "#b8db87",
+--   bright_yellow = "#fab283",
+--   bright_blue = "#fab283",
+--   bright_magenta = "#7b5bb6",
+--   bright_cyan = "#318795",
+--   white = "#eeeeee",
+--   gray = "#606060",
+--   border = "#484848",
+--   diff_add = "#4fd6be",
+--   diff_remove = "#c53b53",
+--   diff_text = "#828bb8",
+--   diff_bg_add = "#20303b",
+--   diff_bg_remove = "#37222c",
+-- }
+--
+-- theme.colors = colors
+--
+-- theme.set_highlights = function()
+--   local set = vim.api.nvim_set_hl
+--
+--   -- UI
+--   set(0, "Normal", { fg = colors.fg, bg = colors.bg })
+--   set(0, "NormalNC", { fg = colors.fg, bg = colors.bg })
+--   set(0, "LineNr", { fg = colors.fg_muted, bg = colors.bg_element })
+--   set(0, "CursorLineNr", { fg = colors.blue, bg = colors.bg_element })
+--   set(0, "CursorLine", { bg = colors.bg_element })
+--   set(0, "Cursor", { fg = colors.bg, bg = colors.cursor })
+--   set(0, "Visual", { bg = colors.selection_bg })
+--   set(0, "Search", { bg = colors.orange, fg = colors.bg })
+--   set(0, "MatchParen", { bg = colors.bg_subtle, bold = true })
+--   set(0, "Pmenu", { fg = colors.fg, bg = colors.bg_panel })
+--   set(0, "PmenuSel", { fg = colors.bg, bg = colors.blue })
+--   set(0, "StatusLine", { fg = colors.fg, bg = colors.bg_panel })
+--   set(0, "VertSplit", { fg = colors.border })
+--
+--   -- Syntax
+--   set(0, "Comment", { fg = colors.fg_muted, italic = true })
+--   set(0, "Keyword", { fg = colors.magenta, bold = true })
+--   set(0, "Function", { fg = colors.bright_yellow })
+--   set(0, "String", { fg = colors.green })
+--   set(0, "Number", { fg = colors.orange })
+--   set(0, "Type", { fg = colors.yellow })
+--   set(0, "Constant", { fg = colors.orange })
+--   set(0, "Operator", { fg = colors.cyan })
+--   set(0, "Identifier", { fg = colors.red })
+--   set(0, "Punctuation", { fg = colors.fg })
+--
+--   -- Markdown
+--   set(0, "markdownHeadingDelimiter", { fg = colors.magenta, bold = true })
+--   set(0, "markdownLinkText", { fg = colors.cyan, underline = true })
+--   set(0, "markdownCode", { fg = colors.green })
+--   set(0, "markdownBlockquote", { fg = colors.yellow, italic = true })
+--
+--   -- Diff
+--   set(0, "DiffAdd", { bg = colors.diff_bg_add, fg = colors.diff_add })
+--   set(0, "DiffDelete", { bg = colors.diff_bg_remove, fg = colors.diff_remove })
+--   set(0, "DiffChange", { bg = colors.bg_element, fg = colors.diff_text })
+--   set(0, "DiffText", { bg = colors.bg_subtle })
+--
+--   -- Diagnostics
+--   set(0, "DiagnosticError", { fg = colors.red })
+--   set(0, "DiagnosticWarn", { fg = colors.orange })
+--   set(0, "DiagnosticInfo", { fg = colors.cyan })
+--   set(0, "DiagnosticHint", { fg = colors.green })
+--
+--   -- Treesitter
+--   set(0, "@comment", { fg = colors.fg_muted, italic = true })
+--   set(0, "@keyword", { fg = colors.magenta, bold = true })
+--   set(0, "@keyword.function", { fg = colors.magenta, italic = true })
+--   set(0, "@keyword.return", { fg = colors.magenta })
+--   set(0, "@operator", { fg = colors.cyan })
+--   set(0, "@punctuation", { fg = colors.fg })
+--
+--   set(0, "@function", { fg = colors.bright_yellow })
+--   set(0, "@function.builtin", { fg = colors.blue })
+--   set(0, "@function.call", { fg = colors.bright_yellow })
+--   set(0, "@method", { fg = colors.bright_yellow })
+--   set(0, "@method.call", { fg = colors.bright_yellow })
+--
+--   set(0, "@constructor", { fg = colors.yellow })
+--   set(0, "@parameter", { fg = colors.red })
+--
+--   set(0, "@variable", { fg = colors.red })
+--   set(0, "@variable.builtin", { fg = colors.orange, italic = true })
+--
+--   set(0, "@property", { fg = colors.cyan })
+--   set(0, "@field", { fg = colors.cyan })
+--
+--   set(0, "@type", { fg = colors.yellow })
+--   set(0, "@type.builtin", { fg = colors.orange })
+--
+--   set(0, "@number", { fg = colors.orange })
+--   set(0, "@boolean", { fg = colors.orange })
+--   set(0, "@float", { fg = colors.orange })
+--
+--   set(0, "@string", { fg = colors.green })
+--   set(0, "@string.regex", { fg = colors.green })
+--   set(0, "@string.escape", { fg = colors.yellow })
+--
+--   set(0, "@constant", { fg = colors.orange })
+--   set(0, "@constant.builtin", { fg = colors.orange })
+--   set(0, "@constant.macro", { fg = colors.yellow })
+--
+--   set(0, "@namespace", { fg = colors.blue })
+--   set(0, "@module", { fg = colors.blue })
+--
+--   set(0, "@label", { fg = colors.orange })
+--   set(0, "@tag", { fg = colors.blue })
+--   set(0, "@attribute", { fg = colors.yellow })
+--
+--   set(0, "@error", { fg = colors.red, undercurl = true })
+--
+--   set(0, "@text.title", { fg = colors.magenta, bold = true })
+--   set(0, "@text.literal", { fg = colors.green })
+--   set(0, "@text.uri", { fg = colors.cyan, underline = true })
+--   set(0, "@text.strong", { fg = colors.orange, bold = true })
+--   set(0, "@text.emphasis", { fg = colors.yellow, italic = true })
+--   set(0, "@text.quote", { fg = colors.yellow, italic = true })
+--   set(0, "@text.todo", { fg = colors.red, bold = true })
+--
+--   -- Plugin: Telescope
+--   set(0, "TelescopeNormal", { fg = colors.fg, bg = colors.bg_panel })
+--   set(0, "TelescopeBorder", { fg = colors.border, bg = colors.bg_panel })
+--   set(0, "TelescopePromptNormal", { fg = colors.fg, bg = colors.bg_element })
+--   set(0, "TelescopePromptBorder", { fg = colors.border, bg = colors.bg_element })
+--   set(0, "TelescopeSelection", { fg = colors.fg, bg = colors.selection_bg })
+--
+--   -- Plugin: Lualine
+--   set(0, "StatusLine", { fg = colors.fg, bg = colors.bg_panel })
+--   set(0, "StatusLineNC", { fg = colors.fg_muted, bg = colors.bg_panel })
+--
+--   -- Plugin: NvimTree
+--   set(0, "NvimTreeNormal", { fg = colors.fg, bg = colors.bg })
+--   set(0, "NvimTreeRootFolder", { fg = colors.magenta, bold = true })
+--   set(0, "NvimTreeFolderName", { fg = colors.blue })
+--   set(0, "NvimTreeOpenedFolderName", { fg = colors.cyan })
+-- end
+--
+-- theme.setup = function()
+--   vim.opt.termguicolors = true
+--   vim.cmd("highlight clear")
+--   if vim.fn.exists("syntax_on") then
+--     vim.cmd("syntax reset")
+--   end
+--   vim.g.colors_name = "opencode_dark"
+--   theme.set_highlights()
+--
+--   -- Optional: terminal colors
+--   vim.g.terminal_color_0 = colors.bg
+--   vim.g.terminal_color_1 = colors.red
+--   vim.g.terminal_color_2 = colors.green
+--   vim.g.terminal_color_3 = colors.yellow
+--   vim.g.terminal_color_4 = colors.blue
+--   vim.g.terminal_color_5 = colors.magenta
+--   vim.g.terminal_color_6 = colors.cyan
+--   vim.g.terminal_color_7 = colors.white
+--   vim.g.terminal_color_8 = colors.gray
+--   vim.g.terminal_color_9 = colors.bright_red
+--   vim.g.terminal_color_10 = colors.bright_green
+--   vim.g.terminal_color_11 = colors.bright_yellow
+--   vim.g.terminal_color_12 = colors.bright_blue
+--   vim.g.terminal_color_13 = colors.bright_magenta
+--   vim.g.terminal_color_14 = colors.bright_cyan
+--   vim.g.terminal_color_15 = colors.white
+-- end
+--
+-- return theme
+return {}
