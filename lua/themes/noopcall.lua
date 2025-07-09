@@ -158,7 +158,7 @@ M.base_16 = {
 M.polish_hl = {
   defaults = {
     Comment = {
-      bg = background, -- or M.base_30.cyan
+      bg = one_bg3, -- or M.base_30.cyan
       italic = true,
     },
   },
