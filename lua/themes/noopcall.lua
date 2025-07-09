@@ -4,7 +4,14 @@
 local M = {}
 
 -- Convert HSL to RGB
-local function hsl(h, s, l)
+local function hsl(h, s, l, p)
+  p = p or 0
+  if p > 0 then
+    l = l + (100 - l) * (p / 100)
+  else
+    l = l * (1 + p / 100)
+  end
+
   s = s / 100
   l = l / 100
 
@@ -44,58 +51,65 @@ local function hsl(h, s, l)
   return string.format("#%02x%02x%02x", math.floor(r * 255), math.floor(g * 255), math.floor(b * 255))
 end
 
-local colors = {
-  bg = hsl(216, 5, 21),
-  bg_dark = hsl(216, 5, 18),
+local foreground = hsl(55, 11.54, 79.61)
+local background = hsl(216, 4.76, 20.59)
+local darker_black = hsl(216, 4.76, 20.59, -6)
+local lighter_black = hsl(216, 4.76, 20.59, 6)
+local one_bg = hsl(216, 4.76, 20.59, 10)
+local one_bg2 = hsl(216, 4.76, 20.59, 16)
+local one_bg3 = hsl(216, 4.76, 20.59, 22)
+local grey = hsl(216, 4.76, 20.59, 40)
+local grey_fg = hsl(216, 4.76, 20.59, 50)
+local grey_fg2 = hsl(216, 4.76, 20.59, 55)
+local light_grey = hsl(55, 11.54, 79.61, 10)
 
-  fg = hsl(55, 12, 80),
-  fg_dark = hsl(216, 2, 40),
+local accent = hsl(36, 71, 80)
+local pink = hsl(2, 70, 80)
+local purple = hsl(270, 70, 80)
+local blue = hsl(200, 70, 80)
+local green = hsl(140, 70, 80)
+local red = hsl(0, 70, 80)
 
-  -- Soft colors
-  accent = hsl(47, 84, 48),
-  pink = hsl(2, 70, 80),
-  purple = hsl(270, 70, 80),
-  blue = hsl(200, 70, 80),
-  green = hsl(140, 70, 80),
-  red = hsl(0, 70, 80),
-  error = hsl(0, 70, 60),
-  info = hsl(200, 70, 60),
-  warn = hsl(35, 70, 60),
-}
+local error = hsl(1, 70, 60)
+local info = hsl(200, 70, 60)
+local warn = hsl(35, 70, 60)
 
 -- UI
 M.base_30 = {
-  white = colors.fg,
-  black = colors.bg, -- usually your theme bg
-  darker_black = colors.bg_dark, -- 6% darker than black
-  black2 = colors.bg_dark, -- 6% lighter than black
-  one_bg = colors.fg_dark, -- 10% lighter than black
-  one_bg2 = colors.fg_dark, -- 6% lighter than one_bg
-  one_bg3 = colors.fg_dark, -- 6% lighter than one_bg2
-  grey = colors.bg_dark, -- 40% lighter than black (the % here depends so choose the perfect grey!)
-  grey_fg = colors.fg_dark, -- 10% lighter than grey
-  grey_fg2 = colors.fg_dark, -- 5% lighter than grey
-  light_grey = colors.fg,
-  red = colors.red,
-  baby_pink = colors.pink,
-  pink = colors.pink,
-  line = colors.green, -- 15% lighter than black
-  green = colors.green,
-  vibrant_green = colors.green,
-  nord_blue = colors.blue,
-  blue = colors.blue,
-  seablue = colors.blue,
-  yellow = colors.warn, -- 8% lighter than yellow
-  sun = colors.warn,
-  purple = colors.purple,
-  dark_purple = colors.purple,
-  teal = colors.blue,
-  orange = colors.info,
-  cyan = colors.info,
-  statusline_bg = colors.bg_dark,
-  lightbg = colors.bg,
-  pmenu_bg = colors.bg,
-  folder_bg = colors.bg,
+  -- Base Grayscale
+  white = foreground,
+  black = background, -- usually your theme bg
+  darker_black = darker_black, -- 6% darker than black
+  black2 = lighter_black, -- 6% lighter than black
+  one_bg = one_bg, -- 10% lighter than black
+  one_bg2 = one_bg2, -- 6% lighter than one_bg
+  one_bg3 = one_bg3, -- 6% lighter than one_bg2
+  grey = grey, -- 40% lighter than black (the % here depends so choose the perfect grey!)
+  grey_fg = grey_fg, -- 10% lighter than grey
+  grey_fg2 = grey_fg2, -- 5% lighter than grey
+  light_grey = light_grey,
+
+  -- Colors
+  red = red,
+  baby_pink = pink,
+  pink = pink,
+  line = one_bg2, -- 15% lighter than black
+  green = green,
+  vibrant_green = green,
+  nord_blue = blue,
+  blue = blue,
+  seablue = blue,
+  yellow = warn, -- 8% lighter than yellow
+  sun = warn,
+  purple = purple,
+  dark_purple = purple,
+  teal = blue,
+  orange = info,
+  cyan = info,
+  statusline_bg = background,
+  lightbg = lighter_black,
+  pmenu_bg = pink,
+  folder_bg = accent,
 }
 
 -- check https://github.com/chriskempson/base16/blob/master/styling.md for more info
@@ -119,22 +133,22 @@ M.base_30 = {
 -- base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed
 -- base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
 M.base_16 = {
-  base00 = colors.bg,
-  base01 = colors.bg_dark,
-  base02 = colors.accent,
-  base03 = colors.accent,
-  base04 = colors.fg_dark,
-  base05 = colors.fg,
-  base06 = colors.fg,
-  base07 = colors.bg,
-  base08 = colors.fg_dark,
-  base09 = colors.accent,
-  base0A = colors.pink,
-  base0B = colors.blue,
-  base0C = colors.fg_dark,
-  base0D = colors.purple,
-  base0E = colors.fg_dark,
-  base0F = colors.fg_dark,
+  base00 = background,
+  base01 = lighter_black,
+  base02 = grey_fg,
+  base03 = one_bg3,
+  base04 = darker_black,
+  base05 = foreground,
+  base06 = light_grey,
+  base07 = lighter_black,
+  base08 = foreground,
+  base09 = pink,
+  base0A = pink,
+  base0B = green,
+  base0C = one_bg3,
+  base0D = accent,
+  base0E = one_bg3,
+  base0F = one_bg3,
 }
 
 -- OPTIONAL
@@ -144,13 +158,13 @@ M.base_16 = {
 M.polish_hl = {
   defaults = {
     Comment = {
-      bg = colors.bg, -- or M.base_30.cyan
+      bg = background, -- or M.base_30.cyan
       italic = true,
     },
   },
 
   treesitter = {
-    ["@variable"] = { fg = colors.accent },
+    ["@variable"] = { fg = foreground },
   },
 }
 
