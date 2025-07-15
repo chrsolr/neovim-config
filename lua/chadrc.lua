@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "opencode-dark",
+  theme = "catppuccin",
 }
 
 M.ui = {
