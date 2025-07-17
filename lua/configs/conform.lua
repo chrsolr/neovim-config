@@ -29,7 +29,7 @@ local options = {
     css = { "prettierd", "prettierd", stop_after_first = true },
     lua = { "stylua" },
     toml = { "taplo" },
-    cs = { "csharpier" },
+    --cs = { "csharpier" },
     sql = { "sql_formatter" },
   },
 
