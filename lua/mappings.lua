@@ -155,4 +155,4 @@ end, {})
 map("n", "<leader>gs", ":GoogleSearch ", { noremap = true, desc = "Google Search in Browser" })
 
 -- Open file in file explorer
-map("n", "<leader>ofe", ":OpenFileExplorer", { noremap = true, desc = "Open file in file explorer" })
+map("n", "<leader>oie", ":OpenInExplorer<CR>", { noremap = true, desc = "Open file in file explorer" })
