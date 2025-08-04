@@ -164,3 +164,9 @@ vim.keymap.set({ 'n', 'v' }, '<leader>fm', function(_)
     stop_after_first = true,
   }
 end, { desc = 'Format current buffer with Conform or LSP' })
+
+-- Google Search
+vim.keymap.set('n', '<leader>gs', ':GoogleSearch ', { noremap = true, desc = 'Google Search in Browser' })
+
+-- Open file in file explorer
+vim.keymap.set('n', '<leader>oie', ':OpenInExplorer<CR>', { noremap = true, desc = 'Open file in file explorer' })
