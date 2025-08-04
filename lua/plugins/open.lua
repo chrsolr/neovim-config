@@ -1,4 +1,5 @@
 return {
+  -- "chrsolr/open.nvim",
   dir = "~/dev/open.nvim",
   lazy = false,
   enabled = true,

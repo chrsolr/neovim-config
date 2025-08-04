@@ -149,7 +149,7 @@ map("n", "<leader>sg", function()
   if input ~= "" then
     require("open").search_google(input)
   end
-end, { desc = "Google Search in Browser" })
+end, {})
 
--- Search Google
-map("n", "<leader>os", ":SearchGoogle ", { noremap = true })
+-- Google Search
+map("n", "<leader>sg", ":GoogleSearch ", { noremap = true, desc = "Google Search in Browser" })
