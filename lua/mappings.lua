@@ -152,4 +152,4 @@ map("n", "<leader>sg", function()
 end, {})
 
 -- Google Search
-map("n", "<leader>sg", ":GoogleSearch ", { noremap = true, desc = "Google Search in Browser" })
+map("n", "<leader>gs", ":GoogleSearch ", { noremap = true, desc = "Google Search in Browser" })
