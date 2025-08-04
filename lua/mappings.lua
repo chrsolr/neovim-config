@@ -143,3 +143,13 @@ map("n", "<M-4>", "<cmd>resize +5<CR>", { noremap = true, desc = "Increase windo
 map("n", "<M-3>", "<cmd>resize -2<CR>", { noremap = true, desc = "Decrease window height" })
 map("n", "<M-2>", "<cmd>vertical resize -2<CR>", { noremap = true, desc = "Decrease window width" })
 map("n", "<M-1>", "<cmd>vertical resize +2<CR>", { noremap = true, desc = "Increase window width" })
+
+map("n", "<leader>sg", function()
+  local input = vim.fn.input("Google Search: ")
+  if input ~= "" then
+    require("open").search_google(input)
+  end
+end, { desc = "Google Search in Browser" })
+
+-- Search Google
+map("n", "<leader>os", ":SearchGoogle ", { noremap = true })
